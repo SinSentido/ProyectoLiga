@@ -86,4 +86,6 @@
         require './dbConnection.php';
         //TODO
     }
+
+    /*Comentario para probar el fetch*/
 ?>
