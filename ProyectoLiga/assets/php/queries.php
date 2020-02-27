@@ -1,12 +1,15 @@
 <?php
+    insertLeague("Liga Tragaldabas5", "La liga para los que les guste comer y el basket.");
     /********************************************************************/
     //Queries para la tabla 'liga'
+    //Columnas: idLiga(string), nombreLiga(string), fechaCreacion(date), descripcion(string),
+    //          activa(boolean)
     /********************************************************************/
 
     //Devuelve todas las ligas en la base de datos
     function getAllLeagues(){
         require './dbConnection.php';
-        $leagues = $database -> select("liga", "*", true);
+        $leagues = $database->select("liga", "*", true);
         return $leagues;
     }
 
@@ -24,9 +27,30 @@
         return $league;
     }
 
+    //Inserta una nueva liga en la base de datos
+    function insertLeague($leagueName, $leagueDescription){
+        require './dbConnection.php';
+        $database->insert("liga", [
+            "idLiga" => "E" . strval($database->count("liga")+1),
+            "nombreLiga" => $leagueName,
+            "fechaCreacion" => date("Y-m-d"),
+            "descripcion" => $leagueDescription,
+            "activa" => true
+        ]);
+        echo "Insertando liga...";
+    }
+
+    //Marca una liga como inactiva
+    function deleteLeague($leagueId){
+        require './dbConnection.php';
+        //TODO
+    }
+
 
     /********************************************************************/
     //Queries para la tabla 'equipo'
+    //Columnas: idEquipo(string), idLiga(string), nombreEquipo(string), nSocial(string),
+    //          ciudad(string), fechaCreacion(date)
     /********************************************************************/
 
     //Devuelve todos los equipos en la base de datos
@@ -58,9 +82,22 @@
         return $team;
     }
 
+    //Inserta un equipo a la base de datos
+    function insertTeam(){
+        require './dbConnection.php';
+        //TODO
+    }
+
+    //Borra un equipo indicado por su Id
+    function deleteTeam($teamId){
+        require './dbConnection.php';
+        //TODO
+    }
+
 
     /********************************************************************/
     //Queries para la tabla 'partido'
+    //Columnas: idPartido(string), fecha(date)
     /********************************************************************/
 
     //Devuelve todos los partidos
@@ -87,6 +124,7 @@
 
     /********************************************************************/
     //Queries para la tabla 'resultado'
+    //Columnas: idPartido(string), idEquipo(string), resultado(number)
     /********************************************************************/
     
     //Devuelve todos los resultados
