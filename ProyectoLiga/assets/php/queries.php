@@ -69,7 +69,8 @@
     
     function getAllResults(){
         require './dbConnection.php';
-        //TODO
+        $results = $database->select("resultado", "*", true);
+        return $results;
     }
 
     function getResultsByMatch($matchId){
