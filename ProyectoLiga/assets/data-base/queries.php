@@ -1,5 +1,4 @@
 <?php
-    insertLeague("Liga Tragaldabas5", "La liga para los que les guste comer y el basket.");
     /********************************************************************/
     //Queries para la tabla 'liga'
     //Columnas: idLiga(string), nombreLiga(string), fechaCreacion(date), descripcion(string),
@@ -37,13 +36,12 @@
             "descripcion" => $leagueDescription,
             "activa" => true
         ]);
-        echo "Insertando liga...";
     }
 
     //Marca una liga como inactiva
     function deleteLeague($leagueId){
         require './dbConnection.php';
-        //TODO
+        $database->update("liga", ["activa" => false], ["idLiga" => $leagueId]);
     }
 
 
