@@ -1,7 +1,7 @@
 <?php
     //Archivo php que contiene la conexión con la base de datos, es el único objeto de conexión para toda
     //la aplicación.
-    require 'Medoo/src/Medoo.php';
+    require 'assets/database/Medoo/src/Medoo.php';
     use Medoo\Medoo;
 
     //Establecemos la conexión con la base de datos.

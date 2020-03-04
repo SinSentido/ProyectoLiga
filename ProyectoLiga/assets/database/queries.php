@@ -44,18 +44,17 @@
         $database->update("liga", ["activa" => false], ["idLiga" => $leagueId]);
     }
 
-
     /********************************************************************/
     //Queries para la tabla 'equipo'
     //Columnas: idEquipo(string), idLiga(string), nombreEquipo(string), nSocial(string),
     //          ciudad(string), fechaCreacion(date)
     /********************************************************************/
-
+    
     //Devuelve todos los equipos en la base de datos
     function getAllTeams(){
         require './dbConnection.php';
         $teams = $database->select("equipo", "*", true);
-        print_r($teams);
+        return $teams;
     }
 
     //Devuelve todos los equipo pertenecientes a una liga

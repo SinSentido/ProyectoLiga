@@ -69,7 +69,7 @@
                     <h5 class="centered">Nombre del usuario</h5>
 
                     <li class="mt">
-                        <a class="active" href="index.html">
+                        <a class="active" href="index.php">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -81,7 +81,7 @@
                             <span>Equipos</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="equipos.html">Ver equipos</a></li>
+                            <li><a href="equipos.php">Ver equipos</a></li>
                             <li><a href="crearEquipo.html">Crear equipo</a></li>
                         </ul>
                     </li>
