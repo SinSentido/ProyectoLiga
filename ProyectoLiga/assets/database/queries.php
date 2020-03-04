@@ -88,7 +88,7 @@
     //Borra un equipo indicado por su Id
     function deleteTeam($teamId){
         require './dbConnection.php';
-        //TODO
+        $database->delete("equipo", ['idEquipo' => $teamId]);
     }
 
 

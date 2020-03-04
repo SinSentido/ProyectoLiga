@@ -105,7 +105,6 @@
                 <h3><i class="fa fa-angle-right"></i> EQUIPOS CREADOS </h3>
 
                 <!-- row -->
-
                 <div class="row mt">
                     <div class="col-md-12">
                         <div class="content-panel">
@@ -136,12 +135,11 @@
                                         echo "<td>" . $team['ciudad'] . "</td>";
                                         echo "<td>" . $team['fechaCreacion'] . "</td>";
                                         echo "<td>";
-                                        echo "    <button class=\"btn btn-success btn-xs\"><i class=\"fa fa-check\"></i></button>";
-                                        echo "    <button class=\"btn btn-primary btn-xs\"><i class=\"fa fa-pencil\"></i></button>";
-                                        echo "    <button class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button>";
+                                        echo    "<form action=\"teamsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDelete\" value=\"" . $team['idEquipo'] . "\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }
+
                                 ?>
                                 <!-- END OF PHP -->
                                     
