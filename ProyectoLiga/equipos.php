@@ -127,21 +127,24 @@
                                 <?php
                                     require './assets/database/queries.php';
 
-                                    print_r(getAllTeams());
+                                    $teams = getAllTeams();
+
+                                    foreach($teams as $team){
+                                        echo "<tr>";
+                                        echo "<td>" . $team['nombreEquipo'] . "</td>";
+                                        echo "<td>" . $team['nSocial'] . "</td>";
+                                        echo "<td>" . $team['ciudad'] . "</td>";
+                                        echo "<td>" . $team['fechaCreacion'] . "</td>";
+                                        echo "<td>";
+                                        echo "    <button class=\"btn btn-success btn-xs\"><i class=\"fa fa-check\"></i></button>";
+                                        echo "    <button class=\"btn btn-primary btn-xs\"><i class=\"fa fa-pencil\"></i></button>";
+                                        echo "    <button class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button>";
+                                        echo "</td>";
+                                        echo "</tr>";
+                                    }
                                 ?>
                                 <!-- END OF PHP -->
                                     
-                                    <tr>
-                                        <td><a href="basic_table.html#">Company Ltd</a></td>
-                                        <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                        <td>12000.00$ </td>
-                                        <td><span class="label label-info label-mini">Due</span></td>
-                                        <td>
-                                            <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
