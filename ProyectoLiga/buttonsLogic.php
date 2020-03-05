@@ -11,7 +11,9 @@
 
     /*CREAR EQUIPO */
     if(isset($_POST['btnCreate'])){
-        
+        insertTeam($_POST['teamName'], $_POST['socialNum'], $_POST['city']);
+        $_POST = array();
+        header("Location: crearEquipo.php");
     }
 
 

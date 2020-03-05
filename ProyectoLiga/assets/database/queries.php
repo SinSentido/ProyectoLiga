@@ -62,10 +62,10 @@
     /********************************************************************/
     
     //Inserta un equipo a la base de datos
-    function insertTeam($idEquipo, $idLiga, $nombreEquipo, $nSocial, $ciudad, $fechaCreacion){
+    function insertTeam($nombreEquipo, $nSocial, $ciudad){
         require './dbConnection.php';
         $database-> insert('equipo', [
-            'idEquipo' => ($database-max("equipo")+1),
+            'idEquipo' => ($database->max("equipo", "idEquipo")+1),
             'idLiga' => "L1",
             'nombreEquipo' => $nombreEquipo,
             'nSocial' => $nSocial,

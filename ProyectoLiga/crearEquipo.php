@@ -78,7 +78,7 @@
                         </a>
                         <ul class="sub">
                             <li><a href="equipos.php">Ver equipos</a></li>
-                            <li class="active"><a href="crearEquipo.html">Crear equipo</a></li>
+                            <li class="active"><a href="crearEquipo.php">Crear equipo</a></li>
                         </ul>
                     </li>
 
@@ -114,27 +114,27 @@
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Equipo</h4>
 
-                            <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
+                            <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Nombre Del Equipo</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input name="teamName" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Numero Social</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control">
+                                        <input name="socialNum" type="number" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Ciudad</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input name="city" type="text" class="form-control">
                                     </div>
                                 </div>
 
-                                <button type="submit" name="btnCreate"></button>
+                                <button type="submit" name="btnCreate">Crear equipo</button>
                             </form>
                         </div>
                     </div>
