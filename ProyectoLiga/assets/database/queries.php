@@ -161,10 +161,15 @@
     function getAllResultsWithTeam(){
         require './dbConnection.php';
         $results = $database->select("resultado",
-        ["[><]Equipo" => ["idEquipo" => "idEquipo"],
-         "[><]partido" => ["idPartido" => "idPartido"]],
-        "*",
-        true);
+        ["[><]equipo" => ["idEquipo" => "idEquipo"],
+         "[><]partido" => ["idPartido" => "idPartido"]], 
+         [
+            "resultado.idPartido",
+            "partido.fecha",
+            "resultado.idEquipo",
+            "equipo.nombreEquipo",
+            "resultado"
+        ]);
         return $results;
     }
 
