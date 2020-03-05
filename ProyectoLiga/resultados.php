@@ -124,21 +124,18 @@
                                 <!-- PHP FOR THE TABLE RESULTS -->
                                 <?php
                                     require './assets/database/queries.php';
-
                                     $results = getAllResultsWithTeam();
-
-                                    foreach($results as $result){
+                                    foreach($results as $result) {
                                         echo "<tr>";
-                                        echo "<td>" . $result['resultado.idPartido'] . "</td>";
+                                        echo "<td>" . $result['idPartido'] . "</td>";
                                         echo "<td>" . $result['nombreEquipo'] . "</td>";
                                         echo "<td>" . $result['fecha'] . "</td>";
                                         echo "<td>" . $result['resultado'] . "</td>";
                                         echo "<td>";
-                                        echo "<form action=\"buttonsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDeleteEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
+                                        echo "<form action=\"buttonsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDeleteEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-edit btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }
-
                                 ?>
                                     <!-- END OF PHP -->
                             </table>
