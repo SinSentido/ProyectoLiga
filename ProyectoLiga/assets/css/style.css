@@ -1974,15 +1974,22 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    transition: 0.5s;
 }
 
 .result input,
 button {
+    transition: 0.5s;
     padding: 1.2rem;
     border-radius: 10%;
     background-color: #e23d11;
     color: white;
     font-weight: bold;
+}
+
+.result input:hover,
+button:hover {
+    background: #e91e63;
 }
 
 
