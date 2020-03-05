@@ -1,5 +1,16 @@
 <?php
     /********************************************************************/
+    //Queries para la tabla 'usuario'
+    //Columnas: nombreUsuario(string), pass(string)
+    /********************************************************************/
+    function getAllUsers(){
+        require './dbConnection.php';
+        $users = $database->select('usuario', "*", true);
+        return $users;
+    }
+
+
+    /********************************************************************/
     //Queries para la tabla 'liga'
     //Columnas: idLiga(string), nombreLiga(string), fechaCreacion(date), descripcion(string),
     //          activa(boolean)

@@ -82,7 +82,7 @@
                         </a>
                         <ul class="sub">
                             <li><a href="equipos.php">Ver equipos</a></li>
-                            <li><a href="crearEquipo.html">Crear equipo</a></li>
+                            <li><a href="crearEquipo.php">Crear equipo</a></li>
                         </ul>
                     </li>
 
