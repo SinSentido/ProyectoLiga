@@ -1930,6 +1930,9 @@ label {
 
 /*css nuevo puesto para hacer el grid de los forms retocados*/
 
+
+/*Pagina crear equipo y resultado*/
+
 .form-horizontal.style-form .fg {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1947,6 +1950,13 @@ label {
     justify-content: flex-start;
     align-content: flex-start;
     align-items: flex-start;
+}
+
+.form-horizontal.style-form .fg .col-sm-10 .makeControl,
+select {
+    background-color: rgba(255, 99, 71, 0.288);
+    color: black;
+    font-weight: bold;
 }
 
 .form-horizontal.style-form .fg .col-sm-10 label {
@@ -1990,6 +2000,42 @@ button {
 .result input:hover,
 button:hover {
     background: #e91e63;
+}
+
+
+/*Pagina de editar resultado:*/
+
+.form-panel-edit {
+    width: 50%;
+}
+
+.form-horizontal.style-form .fgEdit {
+    display: block;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 {
+    width: 100%;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 .result {
+    width: 8%;
+    margin-top: 20px;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 input,
+label {
+    width: 100%;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 .editControl {
+    width: 30%;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 .editControl,
+select {
+    background-color: rgba(255, 99, 71, 0.288);
+    color: black;
+    font-weight: bold;
 }
 
 
