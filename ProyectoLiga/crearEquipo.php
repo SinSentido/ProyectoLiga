@@ -40,7 +40,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -60,12 +60,12 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <p class="centered">
-                        <a href="profile.html"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
+                        <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
                     <h5 class="centered">Nombre del usuario</h5>
 
                     <li class="mt">
-                        <a href="index.html">
+                        <a href="index.php">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -77,7 +77,7 @@
                             <span>Equipos</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="equipos.html">Ver equipos</a></li>
+                            <li><a href="equipos.php">Ver equipos</a></li>
                             <li class="active"><a href="crearEquipo.html">Crear equipo</a></li>
                         </ul>
                     </li>
@@ -88,8 +88,8 @@
                             <span>Resultados</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="resultados.html">Ver resultados</a></li>
-                            <li><a href="crearResultado.html">Nuevo resultado</a></li>
+                            <li><a href="resultados.php">Ver resultados</a></li>
+                            <li><a href="crearResultado.php">Nuevo resultado</a></li>
                         </ul>
                     </li>
 
@@ -113,19 +113,8 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Equipo</h4>
+
                             <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">ID Equipo</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">ID Liga</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control">
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Nombre Del Equipo</label>
                                     <div class="col-sm-10">
@@ -144,22 +133,13 @@
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Fecha de Cracion</label>
-                                    <div class="col-sm-10">
-                                        <input type="date" class="form-control">
-                                    </div>
-                                </div>
+
+                                <button type="submit" name="btnCreate"></button>
                             </form>
                         </div>
                     </div>
                     <!-- col-lg-12-->
                 </div>
-
-               
-
-                
-
 
             </section>
             <! --/wrapper -->

@@ -65,12 +65,12 @@
     function insertTeam($idEquipo, $idLiga, $nombreEquipo, $nSocial, $ciudad, $fechaCreacion){
         require './dbConnection.php';
         $database-> insert('equipo', [
-            'idEquipo' => $idEquipo,
-            'idLiga' => $idLiga,
+            'idEquipo' => ($database-max("equipo")+1),
+            'idLiga' => "L1",
             'nombreEquipo' => $nombreEquipo,
             'nSocial' => $nSocial,
             'ciudad' => $ciudad,
-            'fechaCreacion' => $fechaCreacion
+            'fechaCreacion' => date('Y-m-d')
         ]);
     }
 

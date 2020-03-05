@@ -1,16 +1,21 @@
 <?php
     require './assets/database/queries.php';
 
-
-    /*LOGICA DE ELIMINACION*/
+    /*EQUIPOS*/
+    /*ELIMINAR EQUIPO*/
     if(isset($_POST['btnDelete'])) { 
         deleteTeam($_POST['btnDelete']);
         $_POST = array();
         header("Location: equipos.php");
     } 
 
-    /*FIN DE ELIMINACION*/
+    /*CREAR EQUIPO */
+    if(isset($_POST['btnCreate'])){
+        
+    }
 
+
+    /*RESULTADOS*/
     /*LOGICA DE INSERCCION*/
     if(isset($_POST['btnInputResult'])){
         inputResult($_GET["idTeam1result"],$_GET["idTeam2result"],$_GET["idMatchResult"],$_GET["resultTeam2"]);
