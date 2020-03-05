@@ -200,7 +200,6 @@
         return $totalPoints;
     }
 
-
     //edita un resultado
     function updateResult($idMatch,$resultIdTeam,$result){
         require './dbConnection.php';
@@ -217,17 +216,27 @@
     $idMatchR = id del partido
     $result = resultado de ese equipo
     */
-    function inputResult($nameTeam,$idMatchR, $result){
+    function insertResult($idLocal, $resultLocal, $idVisitant, $resultVisitant){
         require './dbConnection.php';
-        // Obtenmos el id del equipo por el nombre
-        $idTeam = getTeamByName($nameTeam);
-        if($idTeam >= 0) {
-            $database-> insert('resultado', [
-                'idPartido' => $idMatchR,
-                'idEquipo' => $idTeam,
-                'resultado' => $result
-            ]);
-        };
 
+        $database->insert('partido', [
+            'idPartido' => ($database->max("partido", "idPartido")+1),
+            'fecha' => date('Y-m-d')
+        ]);
+        $matchId = $database->max("partido", "idPartido");
+
+
+        $database->insert('resultado', [
+            'idPartido' => $matchId,
+            'idEquipo' => $idLocal,
+            'resultado' => $resultLocal
+        ]);
+
+
+        $database->insert('resultado', [
+            'idPartido' => $matchId,
+            'idEquipo' => $idVisitant,
+            'resultado' => $resultVisitant
+        ]);
     }
 ?>

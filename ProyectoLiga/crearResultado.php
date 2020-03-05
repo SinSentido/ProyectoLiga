@@ -107,72 +107,49 @@
         <section id="main-content">
             <section class="wrapper">
                 <h3><i class="fa fa-angle-right"></i> Formulario Equipo</h3>
-                <!-- BASIC FORM ELELEMNTS
-                <div class="row mt">
-                    <div class="col-lg-12">
-                        <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Equipo</h4>
-
-                            <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Nombre Del Equipo</label>
-                                    <div class="col-sm-10">
-                                        <input name="teamName" type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Numero Social</label>
-                                    <div class="col-sm-10">
-                                        <input name="socialNum" type="number" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Ciudad</label>
-                                    <div class="col-sm-10">
-                                        <input name="city" type="text" class="form-control">
-                                    </div>
-                                </div>
-
-                                <button type="submit" name="btnCreate">Crear equipo</button>
-                            </form>
-                        </div>
-                    </div>
-                    
-                </div> -->
                 <!-- BASIC FORM ELELEMNTS -->
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Formulario de Resultado</h4>
-                            <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
+                            <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
                                 <div class="form-group fg">
                                     <div class="col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
+                                        
+                                        <!--Bloque php select equipo visitante-->
                                         <?php
                                             //Mostrar un select con todos los equipos disponibles
                                             require './assets/database/queries.php';
                                             $teams = getAllTeams();
-                                            echo "<select name=\"nameTeamLocalResult\">";
+                                            echo "<select name=\"teamLocal\">";
                                             foreach($teams as $team) {
-                                                echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
+                                                echo "<option value=\"" . $team['idEquipo'] . "\">" . $team['nombreEquipo'] . "</option> ";
                                             }
                                             echo "</select>";
                                         ?>
+                                        <!--Fin bloque php-->
+
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
-                                        <input type="number" class="form-control" name="resultTeam1">
+                                        <input type="number" class="form-control" name="resultLocal">
                                     </div>
+
                                     <div class="col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Visitante</label>
+                                        
+                                        <!--Bloque php select equipo visitante-->
                                         <?php
-                                        //Mostrar un select con todos los equipos disponibles
-                                        echo "<select name=\"nameTeamLocalResult\">";
-                                        foreach($teams as $team) {
-                                            echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
-                                        }
-                                        echo "</select>";
+                                            //Mostrar un select con todos los equipos disponibles
+                                            echo "<select name=\"teamVisitant\">";
+                                            foreach($teams as $team) {
+                                                echo "<option value=\"" . $team['idEquipo'] . "\">" . $team['nombreEquipo'] . "</option> ";
+                                            }
+                                            echo "</select>";
                                         ?>
+                                        <!--Fin bloque php-->
+
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Visitante</label>
-                                        <input type="number" class="form-control" name="resultTeam2">
+                                        <input type="number" class="form-control" name="resultVisitant">
                                     </div>
                                 </div>
                                 <div class="result">
