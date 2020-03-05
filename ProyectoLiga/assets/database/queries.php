@@ -57,7 +57,7 @@
 
     /********************************************************************/
     //Queries para la tabla 'equipo'
-    //Columnas: idEquipo(string), idLiga(string), nombreEquipo(string), nSocial(string),
+    //Columnas: idEquipo(int), idLiga(string), nombreEquipo(string), nSocial(string),
     //          ciudad(string), fechaCreacion(date)
     /********************************************************************/
     
@@ -103,8 +103,6 @@
         return $team;
     }
 
-
-
     //Borra un equipo indicado por su Id
     function deleteTeam($teamId){
         require './dbConnection.php';
@@ -114,7 +112,7 @@
 
     /********************************************************************/
     //Queries para la tabla 'partido'
-    //Columnas: idPartido(string), fecha(date)
+    //Columnas: idPartido(int), fecha(date)
     /********************************************************************/
 
     //Devuelve todos los partidos
@@ -145,10 +143,20 @@
         return $matches;
     }
 
+    //Crea un nuevo partido
+    function insertMatch(){
+        require './dbConnection.php';
+        $database->insert('partido', [
+            'idPartido' => ($database->max("partido", "idPartido")+1),
+            'fecha' => date('Y-m-d')
+        ]);
+
+        return $database->max("partido", "idPartido");
+    }
 
     /********************************************************************/
     //Queries para la tabla 'resultado'
-    //Columnas: idPartido(string), idEquipo(string), resultado(number)
+    //Columnas: idPartido(int), idEquipo(string), resultado(number)
     /********************************************************************/
     
     //Devuelve todos los resultados
