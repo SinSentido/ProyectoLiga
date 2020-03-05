@@ -149,14 +149,14 @@
                                     <div class="col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
                                         <?php
-                                        //Mostrar un select con todos los equipos disponibles
-                                        require './assets/database/queries.php';
-                                        $teams = getAllTeams();
-                                        echo "<select name=\"nameTeamLocalResult\">";
-                                        foreach($teams as $team) {
-                                            echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
-                                        }
-                                        echo "</select>";
+                                            //Mostrar un select con todos los equipos disponibles
+                                            require './assets/database/queries.php';
+                                            $teams = getAllTeams();
+                                            echo "<select name=\"nameTeamLocalResult\">";
+                                            foreach($teams as $team) {
+                                                echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
+                                            }
+                                            echo "</select>";
                                         ?>
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
                                         <input type="number" class="form-control" name="resultTeam1">

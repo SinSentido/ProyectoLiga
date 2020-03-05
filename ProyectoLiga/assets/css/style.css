@@ -1944,12 +1944,6 @@ label {
     display: flex;
     width: 100%;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
-
-.form-horizontal.style-form .fg .col-sm-10:nth-child(2) {
     justify-content: flex-start;
     align-content: flex-start;
     align-items: flex-start;
@@ -1976,16 +1970,18 @@ label {
 
 .result {
     display: flex;
-    width: 88%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .result input {
     padding: 1.2rem;
-    border-radius: 15%;
+    border-radius: 10%;
+    background-color: #e23d11;
+    color: white;
+    font-weight: bold;
 }
 
 
