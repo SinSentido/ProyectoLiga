@@ -133,8 +133,9 @@
                                         <input name="city" type="text" class="form-control">
                                     </div>
                                 </div>
-
-                                <button type="submit" name="btnCreate">Crear equipo</button>
+                                <div class="result">
+                                    <button type="submit" name="btnCreate">Crear equipo</button>
+                                </div>
                             </form>
                         </div>
                     </div>

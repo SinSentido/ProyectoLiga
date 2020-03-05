@@ -1976,7 +1976,8 @@ label {
     align-items: flex-start;
 }
 
-.result input {
+.result input,
+button {
     padding: 1.2rem;
     border-radius: 10%;
     background-color: #e23d11;
