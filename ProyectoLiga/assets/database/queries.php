@@ -150,7 +150,6 @@
             'idPartido' => ($database->max("partido", "idPartido")+1),
             'fecha' => date('Y-m-d')
         ]);
-
         return $database->max("partido", "idPartido");
     }
 

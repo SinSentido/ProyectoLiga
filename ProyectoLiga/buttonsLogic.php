@@ -16,14 +16,16 @@
         header("Location: crearEquipo.php");
     }
 
-
     /*RESULTADOS*/
     /*LOGICA DE INSERCCION*/
+
     if(isset($_POST['btnInputResult'])){
-        // Insertamos el equipo local
-        inputResult($_GET["nameTeamLocalResult"],$_GET["selectResult"],$_GET["resultTeam1"]);
-        // Insertamos el equipo visitante
-        inputResult($_GET["nameTeamVisitResult"],$_GET["selectResult"],$_GET["resultTeam2"]);
+        // Obtenemos el ultimo partido creado
+        $matchId = insertMatch();
+        // Insertamos el equipo local con dicho ultimo partido
+        inputResult($_GET["nameTeamLocalResult"], $matchId, $_GET["resultTeam1"]);
+        // Insertamos el equipo visitante con dicho ultimo partido
+        inputResult($_GET["nameTeamVisitResult"], $matchId, $_GET["resultTeam2"]);
         header("Location: resultados.php");
     }
 

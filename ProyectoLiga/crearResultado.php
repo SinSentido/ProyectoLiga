@@ -116,16 +116,6 @@
                             <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
                                 <div class="form-group fg">
                                     <div class="col-sm-10">
-                                        <?php
-                                            //Mostrar un select con todos los partidos disponibles
-                                            require './assets/database/queries.php';
-                                            $matches = getAllMatches();
-                                            echo "<select name=\"selectResult\">";
-                                            foreach($matches as $match) {
-                                                echo "<option value=" . $match['idPartido'] . ">" . "Partido " . $match['idPartido'] . "</option> ";
-                                            }
-                                            echo "</select>";
-                                        ?>
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
                                         <input type="number" class="form-control" name="nameTeamLocalResult">
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
@@ -147,34 +137,6 @@
                     <!-- col-lg-12-->
                 </div>
                 <!-- /row -->
-
-                    <!-- CUSTOM TOGGLES -->
-                    <!-- PENSAR SI HACEMOS ALGO CON ESTE APARTADO -->
-                    <!-- <div class="col-lg-12">
-                        <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> Custom Toggles</h4>
-                            <div class="row mt">
-                                <div class="col-sm-6 text-center">
-                                    <input type="checkbox" checked="" data-toggle="switch" />
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <input type="checkbox" data-toggle="switch" />
-                                </div>
-                            </div>
-                            <div class="row mt">
-                                <div class="col-sm-6 text-center">
-                                    <div class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                        <input type="checkbox" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <div class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                        <input type="checkbox" checked="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <!-- /row -->
 

@@ -1,0 +1,10 @@
+<?php
+//Mostrar un select con todos los partidos disponibles
+require './assets/database/queries.php';
+$matches = getAllMatches();
+echo "<select name=\"selectResult\">";
+foreach($matches as $match) {
+  echo "<option value=" . $match['idPartido'] . ">" . "Partido " . $match['idPartido'] . "</option> ";
+}
+echo "</select>";
+?>
