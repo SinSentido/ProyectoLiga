@@ -1927,6 +1927,70 @@ label {
     margin-bottom: 15px;
 }
 
+
+/*css nuevo puesto para hacer el grid de los forms retocados*/
+
+.form-horizontal.style-form .fg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "AEQ1 AEQ2";
+    border-bottom: 1px solid #eff2f7;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.form-horizontal.style-form .fg .col-sm-10 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.form-horizontal.style-form .fg .col-sm-10:nth-child(2) {
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.form-horizontal.style-form .fg .col-sm-10 label {
+    margin: 15px 0 0 0;
+    padding: 0;
+    font-weight: bold;
+    width: 50%;
+}
+
+.form-horizontal.style-form .fg .col-sm-10 input {
+    width: 50%;
+}
+
+.form-horizontal.style-form .fg .col-sm-10:nth-child(1) {
+    grid-area: AEQ1;
+}
+
+.form-horizontal.style-form .fg .col-sm-10:nth-child(2) {
+    grid-area: AEQ2;
+}
+
+.result {
+    display: flex;
+    width: 88%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.result input {
+    padding: 1.2rem;
+    border-radius: 15%;
+}
+
+
+/*acaba el css*/
+
 .round-form {
     border-radius: 500px;
     -webkit-border-radius: 500px;

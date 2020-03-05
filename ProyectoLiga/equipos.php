@@ -122,7 +122,7 @@
                                 </thead>
                                 <tbody>
 
-                                <!-- PHP FOR THE TABLE RESULTS -->
+                                <!-- PHP FOR THE TABLE TEAMS -->
                                 <?php
                                     require './assets/database/queries.php';
 
@@ -135,7 +135,7 @@
                                         echo "<td>" . $team['ciudad'] . "</td>";
                                         echo "<td>" . $team['fechaCreacion'] . "</td>";
                                         echo "<td>";
-                                        echo    "<form action=\"teamsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDelete\" value=\"" . $team['idEquipo'] . "\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
+                                        echo    "<form action=\"buttonsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDelete\" value=\"" . $team['idEquipo'] . "\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }

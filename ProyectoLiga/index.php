@@ -92,8 +92,8 @@
                             <span>Resultados</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="resultados.html">Ver resultados</a></li>
-                            <li><a href="crearResultado.html">Nuevo resultado</a></li>
+                            <li><a href="resultados.php">Ver resultados</a></li>
+                            <li><a href="crearResultado.php">Nuevo resultado</a></li>
                         </ul>
                     </li>
 

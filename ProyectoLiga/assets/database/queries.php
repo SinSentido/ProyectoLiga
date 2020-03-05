@@ -150,4 +150,19 @@
         $totalPoints = $database->sum("resultado", "resultado", ['idEquipo' => $teamId]);
         return $totalPoints;
     }
+
+    //Inserta el resultado de dos equipos disputados en un partido 
+    function inputResult($resultIdTeam1, $resultIdTeam2, $idMatch, $result){
+        require './dbConnection.php';
+        $database-> insert('resultados', [
+            'idPartido' => $idMatch,
+            'idEquipo' => $resultIdTeam1,
+            'resultado' => $result
+        ]);
+        $database-> insert('resultados', [
+            'idPartido' => $idMatch,
+            'idEquipo' => $resultIdTeam2,
+            'resultado' => $result
+        ]);
+    }
 ?>
