@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Liga de baloncesto - Crear Resultado</title>
+    <title>DASHGUM - Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -40,7 +40,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -60,12 +60,12 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <p class="centered">
-                        <a href="profile.html"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
+                        <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
                     <h5 class="centered">Nombre del usuario</h5>
 
                     <li class="mt">
-                        <a href="index.html">
+                        <a href="index.php">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -77,8 +77,8 @@
                             <span>Equipos</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="equipos.html">Ver equipos</a></li>
-                            <li><a href="crearEquipo.html">Crear equipo</a></li>
+                            <li><a href="equipos.php">Ver equipos</a></li>
+                            <li><a href="crearEquipo.php">Crear equipo</a></li>
                         </ul>
                     </li>
 
@@ -88,8 +88,8 @@
                             <span>Resultados</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="resultados.html">Ver resultados</a></li>
-                            <li class="active"><a href="crearResultado.html">Nuevo resultado</a></li>
+                            <li><a href="resultados.php">Ver resultados</a></li>
+                            <li class="active"><a href="crearResultado.php">Nuevo resultado</a></li>
                         </ul>
                     </li>
 
@@ -106,58 +106,40 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Creacion De Resultados</h3>
+                <h3><i class="fa fa-angle-right"></i> Formulario Equipo</h3>
 
                 <!-- BASIC FORM ELELEMNTS -->
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> Formulario de Resultado</h4>
-                            <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
-                                <div class="form-group fg">
+                            <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Equipo</h4>
+
+                            <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Nombre Del Equipo</label>
                                     <div class="col-sm-10">
-                                        <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
-                                        <?php
-                                        //Mostrar un select con todos los equipos disponibles
-                                        require './assets/database/queries.php';
-                                        $teams = getAllTeams();
-                                        echo "<select name=\"nameTeamLocalResult\">";
-                                        foreach($teams as $team) {
-                                            echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
-                                        }
-                                        echo "</select>";
-                                        ?>
-                                        <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
-                                        <input type="number" class="form-control" name="resultTeam1">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Visitante</label>
-                                        <?php
-                                        //Mostrar un select con todos los equipos disponibles
-                                        require './assets/database/queries.php';
-                                        $teams = getAllTeams();
-                                        echo "<select name=\"nameTeamVisitResult\">";
-                                        foreach($teams as $team) {
-                                            echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
-                                        }
-                                        echo "</select>";
-                                        ?>
-                                        <label class="col-sm-2 col-sm-2 control-label">Resultado Visitante</label>
-                                        <input type="number" class="form-control" name="resultTeam2">
+                                        <input name="teamName" type="text" class="form-control">
                                     </div>
                                 </div>
-                                <div class="result">
-                                    <input type="submit" value="Crear Resultado" name="btnInputResult">
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Numero Social</label>
+                                    <div class="col-sm-10">
+                                        <input name="socialNum" type="number" class="form-control">
+                                    </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Ciudad</label>
+                                    <div class="col-sm-10">
+                                        <input name="city" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <button type="submit" name="btnCreate">Crear equipo</button>
                             </form>
                         </div>
                     </div>
                     <!-- col-lg-12-->
                 </div>
-                <!-- /row -->
-                </div>
-                <!-- /row -->
-
 
             </section>
             <! --/wrapper -->

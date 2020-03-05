@@ -38,7 +38,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -58,12 +58,12 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <p class="centered">
-                        <a href="profile.html"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
+                        <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
                     <h5 class="centered">Nombre del usuario</h5>
 
                     <li class="mt">
-                        <a href="index.html">
+                        <a href="index.php">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -75,7 +75,7 @@
                             <span>Equipos</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="general.html">Ver equipos</a></li>
+                            <li><a href="equipos.php">Ver equipos</a></li>
                             <li><a href="crearEquipo.php">Crear equipo</a></li>
                         </ul>
                     </li>
@@ -86,7 +86,7 @@
                             <span>Resultados</span>
                         </a>
                         <ul class="sub">
-                            <li class="active"><a href="resultados.html">Ver resultados</a></li>
+                            <li class="active"><a href="resultados.php">Ver resultados</a></li>
                             <li><a href="crearResultado.php">Nuevo resultado</a></li>
                         </ul>
                     </li>
