@@ -165,9 +165,7 @@
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Visitante</label>
                                         <?php
                                         //Mostrar un select con todos los equipos disponibles
-                                        require './assets/database/queries.php';
-                                        $teams = getAllTeams();
-                                        echo "<select name=\"nameTeamVisitResult\">";
+                                        echo "<select name=\"nameTeamLocalResult\">";
                                         foreach($teams as $team) {
                                             echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
                                         }
