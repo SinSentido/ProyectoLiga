@@ -204,13 +204,16 @@
         ]);
     }
 
-    //Inserta el resultado de dos equipos disputados en un partido 
-    function inputResult($nameTeam, $result){
+    //Inserta el resultado 
+    /*
+    $nameTeam = nombre del equipo
+    $idMatchR = id del partido
+    $result = resultado de ese equipo
+    */
+    function inputResult($nameTeam,$idMatchR, $result){
         require './dbConnection.php';
-        // Obtenmos el id del equipo 
+        // Obtenmos el id del equipo por el nombre
         $idTeam = getTeamByName($nameTeam);
-        // Obtenmos el id del partido 
-        $idMatchR = getMatchLatestId();
         if($idTeam >= 0) {
             $database-> insert('resultado', [
                 'idPartido' => $idMatchR,

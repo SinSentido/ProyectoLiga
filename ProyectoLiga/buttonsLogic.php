@@ -20,8 +20,11 @@
     /*RESULTADOS*/
     /*LOGICA DE INSERCCION*/
     if(isset($_POST['btnInputResult'])){
-        inputResult($_GET["nameTeamLocal"],$_GET["idMatchResult"],$_GET["resultTeam2"]);
-        header("Location: crearResultado.php");
+        // Insertamos el equipo local
+        inputResult($_GET["nameTeamLocalResult"],$_GET["selectResult"],$_GET["resultTeam1"]);
+        // Insertamos el equipo visitante
+        inputResult($_GET["nameTeamVisitResult"],$_GET["selectResult"],$_GET["resultTeam2"]);
+        header("Location: resultados.php");
     }
 
     /*FIN DE INSERCCION*/

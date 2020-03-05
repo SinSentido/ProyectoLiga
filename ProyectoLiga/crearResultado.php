@@ -116,14 +116,24 @@
                             <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
                                 <div class="form-group fg">
                                     <div class="col-sm-10">
+                                        <?php
+                                            //Mostrar un select con todos los partidos disponibles
+                                            require './assets/database/queries.php';
+                                            $matches = getAllMatches();
+                                            echo "<select name=\"selectResult\">";
+                                            foreach($matches as $match) {
+                                                echo "<option value=" . $match['idPartido'] . ">" . "Partido " . $match['idPartido'] . "</option> ";
+                                            }
+                                            echo "</select>";
+                                        ?>
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
-                                        <input type="number" class="form-control" name="idTeam1result">
+                                        <input type="number" class="form-control" name="nameTeamLocalResult">
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
                                         <input type="number" class="form-control" name="resultTeam1">
                                     </div>
                                     <div class="col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Visitante</label>
-                                        <input type="number" class="form-control" name="idTeam2result">
+                                        <input type="number" class="form-control" name="nameTeamVisitResult">
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Visitante</label>
                                         <input type="number" class="form-control" name="resultTeam2">
                                     </div>
