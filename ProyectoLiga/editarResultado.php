@@ -107,54 +107,32 @@
         <section id="main-content">
             <section class="wrapper">
                 <h3><i class="fa fa-angle-right"></i> Formulario Equipo</h3>
-                <!-- BASIC FORM ELELEMNTS -->
+                <!-- BASIC FORM ELELEMNTS-->
                 <div class="row mt">
                     <div class="col-lg-12">
-                        <div class="form-panel">
+                        <div class="form-panel form-panel-edit">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Formulario de Resultado</h4>
-                            <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
-                                <div class="form-group fg">
-                                    <div class="col-sm-10">
+                            <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
+                                <div class="form-group fg fgEdit">
+                                    <div class="col-sm-10 edit-col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
-                                        
-                                        <!--Bloque php select equipo visitante-->
                                         <?php
                                             //Mostrar un select con todos los equipos disponibles
                                             require './assets/database/queries.php';
                                             $teams = getAllTeams();
-                                            echo "<select name=\"teamLocal\">";
+                                            echo "<select name=\"nameTeamLocalResult\">";
                                             foreach($teams as $team) {
-                                                echo "<option value=\"" . $team['idEquipo'] . "\">" . $team['nombreEquipo'] . "</option> ";
+                                                echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
                                             }
                                             echo "</select>";
                                         ?>
-                                        <!--Fin bloque php-->
-
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
-                                        <input type="number" class="form-control" name="resultLocal">
+                                        <input type="number" class="form-control editControl" name="resultTeam1">
+                                        <div class="result">
+                                            <input type="submit" value="Crear Resultado" name="btnInputResult">
+                                        </div>
                                     </div>
 
-                                    <div class="col-sm-10">
-                                        <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Visitante</label>
-                                        
-                                        <!--Bloque php select equipo visitante-->
-                                        <?php
-                                            //Mostrar un select con todos los equipos disponibles
-                                            echo "<select name=\"teamVisitant\">";
-                                            foreach($teams as $team) {
-                                                echo "<option value=\"" . $team['idEquipo'] . "\">" . $team['nombreEquipo'] . "</option> ";
-                                            }
-                                            echo "</select>";
-                                        ?>
-                                        <!--Fin bloque php-->
-
-                                        <label class="col-sm-2 col-sm-2 control-label">Resultado Visitante</label>
-                                        <input type="number" class="form-control" name="resultVisitant">
-                                    </div>
-                                </div>
-                                <div class="result">
-                                    <input  type="submit" value="Crear Resultado" name="btnInputResult">
-                                </div>
                             </form>
                         </div>
                     </div>
