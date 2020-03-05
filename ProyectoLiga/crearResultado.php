@@ -123,7 +123,7 @@
                                         $teams = getAllTeams();
                                         echo "<select name=\"nameTeamLocalResult\">";
                                         foreach($teams as $team) {
-                                            echo "<option value=" . $team['idPartido'] . ">" . "Partido " . $team['nombreEquipo'] . "</option> ";
+                                            echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
                                         }
                                         echo "</select>";
                                         ?>
@@ -138,7 +138,7 @@
                                         $teams = getAllTeams();
                                         echo "<select name=\"nameTeamVisitResult\">";
                                         foreach($teams as $team) {
-                                            echo "<option value=" . $team['idPartido'] . ">" . "Partido " . $team['nombreEquipo'] . "</option> ";
+                                            echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
                                         }
                                         echo "</select>";
                                         ?>
