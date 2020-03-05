@@ -140,6 +140,16 @@
         return $results;
     }
 
+    function getAllResultsWithTeam(){
+        require './dbConnection.php';
+        $results = $database->select("resultado",
+        ["[><]Equipo" => ["idEquipo" => "idEquipo"],
+         "[><]partido" => ["idPartido" => "idPartido"]],
+        "*",
+        true);
+        return $results;
+    }
+
     //Devuelve los resultados de un partido indicado por su Id
     function getResultsByMatch($matchId){
         require './dbConnection.php';
@@ -158,6 +168,17 @@
         require './dbConnection.php';
         $totalPoints = $database->sum("resultado", "resultado", ['idEquipo' => $teamId]);
         return $totalPoints;
+    }
+
+
+    //edita un resultado
+    function updateResult($idMatch,$resultIdTeam,$result){
+        require './dbConnection.php';
+        $database->update("resultado",[
+            "idPartido" => $idMatch,
+            "idEquipo" => $result,
+            "resultado" => $resultIdTeam
+        ]);
     }
 
     //Inserta el resultado de dos equipos disputados en un partido 

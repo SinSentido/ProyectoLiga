@@ -76,7 +76,7 @@
                         </a>
                         <ul class="sub">
                             <li><a href="general.html">Ver equipos</a></li>
-                            <li><a href="crearEquipo.html">Crear equipo</a></li>
+                            <li><a href="crearEquipo.php">Crear equipo</a></li>
                         </ul>
                     </li>
 
@@ -87,7 +87,7 @@
                         </a>
                         <ul class="sub">
                             <li class="active"><a href="resultados.html">Ver resultados</a></li>
-                            <li><a href="crearResultado.html">Nuevo resultado</a></li>
+                            <li><a href="crearResultado.php">Nuevo resultado</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -115,7 +115,8 @@
                                 <thead>
                                     <tr>
                                         <th><i class="fa fa-bullhorn"></i> ID_Partido</th>
-                                        <th class="hidden-phone"><i class="fa fa-question-circle"></i> ID_Equipo</th>
+                                        <th class="hidden-phone"><i class="fa fa-question-circle"></i> Nombre del Equipo</th>
+                                        <th><i class="fa fa-bullhorn"></i> Fecha del Partido</th<i>
                                         <th><i class="fa fa-bookmark"></i> Resultado</th>
                                         <th></th>
                                     </tr>
@@ -124,15 +125,16 @@
                                 <?php
                                     require './assets/database/queries.php';
 
-                                    $results = getAllResults();
+                                    $results = getAllResultsWithTeam();
 
                                     foreach($results as $result){
                                         echo "<tr>";
-                                        echo "<td>" . $result['idPartido'] . "</td>";
-                                        echo "<td>" . $result['idEquipo'] . "</td>";
+                                        echo "<td>" . $result['resultado.idPartido'] . "</td>";
+                                        echo "<td>" . $result['nombreEquipo'] . "</td>";
+                                        echo "<td>" . $result['fecha'] . "</td>";
                                         echo "<td>" . $result['resultado'] . "</td>";
                                         echo "<td>";
-                                        echo "<form action=\"teamsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDelete\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
+                                        echo "<form action=\"buttonsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDeleteEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }
