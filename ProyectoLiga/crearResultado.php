@@ -119,7 +119,7 @@
                                         <label class="col-sm-2 col-sm-2 control-label">Id Equipo Local</label>
                                         <input type="number" class="form-control" name="idTeam1result">
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
-                                        <input type="number" class="form-control" name="resultTeam1>
+                                        <input type="number" class="form-control" name="resultTeam1">
                                     </div>
                                     <div class="col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Id Equipo Visitante</label>
@@ -164,8 +164,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div> -->
+                    </div> -->
+                </div>
                 <!-- /row -->
 
 

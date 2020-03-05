@@ -61,6 +61,19 @@
     //          ciudad(string), fechaCreacion(date)
     /********************************************************************/
     
+    //Inserta un equipo a la base de datos
+    function insertTeam($idEquipo, $idLiga, $nombreEquipo, $nSocial, $ciudad, $fechaCreacion){
+        require './dbConnection.php';
+        $database-> insert('equipo', [
+            'idEquipo' => $idEquipo,
+            'idLiga' => $idLiga,
+            'nombreEquipo' => $nombreEquipo,
+            'nSocial' => $nSocial,
+            'ciudad' => $ciudad,
+            'fechaCreacion' => $fechaCreacion
+        ]);
+    }
+
     //Devuelve todos los equipos en la base de datos
     function getAllTeams(){
         require './dbConnection.php';
@@ -90,11 +103,7 @@
         return $team;
     }
 
-    //Inserta un equipo a la base de datos
-    function insertTeam(){
-        require './dbConnection.php';
-        //TODO
-    }
+
 
     //Borra un equipo indicado por su Id
     function deleteTeam($teamId){
@@ -165,12 +174,12 @@
     //Inserta el resultado de dos equipos disputados en un partido 
     function inputResult($resultIdTeam1, $resultIdTeam2, $idMatch, $result){
         require './dbConnection.php';
-        $database-> insert('resultados', [
+        $database-> insert('resultado', [
             'idPartido' => $idMatch,
             'idEquipo' => $resultIdTeam1,
             'resultado' => $result
         ]);
-        $database-> insert('resultados', [
+        $database-> insert('resultado', [
             'idPartido' => $idMatch,
             'idEquipo' => $resultIdTeam2,
             'resultado' => $result
