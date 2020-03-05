@@ -117,13 +117,31 @@
                                 <div class="form-group fg">
                                     <div class="col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
-                                        <input type="number" class="form-control" name="nameTeamLocalResult">
+                                        <?php
+                                        //Mostrar un select con todos los equipos disponibles
+                                        require './assets/database/queries.php';
+                                        $teams = getAllTeams();
+                                        echo "<select name=\"nameTeamLocalResult\">";
+                                        foreach($teams as $team) {
+                                            echo "<option value=" . $team['idPartido'] . ">" . "Partido " . $team['nombreEquipo'] . "</option> ";
+                                        }
+                                        echo "</select>";
+                                        ?>
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
                                         <input type="number" class="form-control" name="resultTeam1">
                                     </div>
                                     <div class="col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Visitante</label>
-                                        <input type="number" class="form-control" name="nameTeamVisitResult">
+                                        <?php
+                                        //Mostrar un select con todos los equipos disponibles
+                                        require './assets/database/queries.php';
+                                        $teams = getAllTeams();
+                                        echo "<select name=\"nameTeamVisitResult\">";
+                                        foreach($teams as $team) {
+                                            echo "<option value=" . $team['idPartido'] . ">" . "Partido " . $team['nombreEquipo'] . "</option> ";
+                                        }
+                                        echo "</select>";
+                                        ?>
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Visitante</label>
                                         <input type="number" class="form-control" name="resultTeam2">
                                     </div>
