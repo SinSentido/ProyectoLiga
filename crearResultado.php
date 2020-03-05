@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>Liga de baloncesto - Crear Resultado</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -40,7 +40,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -60,12 +60,12 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <p class="centered">
-                        <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
+                        <a href="profile.html"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
                     <h5 class="centered">Nombre del usuario</h5>
 
                     <li class="mt">
-                        <a href="index.php">
+                        <a href="index.html">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -77,8 +77,8 @@
                             <span>Equipos</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="equipos.php">Ver equipos</a></li>
-                            <li><a href="crearEquipo.php">Crear equipo</a></li>
+                            <li><a href="equipos.html">Ver equipos</a></li>
+                            <li><a href="crearEquipo.html">Crear equipo</a></li>
                         </ul>
                     </li>
 
@@ -88,8 +88,8 @@
                             <span>Resultados</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="resultados.php">Ver resultados</a></li>
-                            <li class="active"><a href="crearResultado.php">Nuevo resultado</a></li>
+                            <li><a href="resultados.html">Ver resultados</a></li>
+                            <li class="active"><a href="crearResultado.html">Nuevo resultado</a></li>
                         </ul>
                     </li>
 
@@ -106,39 +106,8 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Formulario Equipo</h3>
-                <!-- BASIC FORM ELELEMNTS
-                <div class="row mt">
-                    <div class="col-lg-12">
-                        <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Equipo</h4>
+                <h3><i class="fa fa-angle-right"></i> Creacion De Resultados</h3>
 
-                            <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Nombre Del Equipo</label>
-                                    <div class="col-sm-10">
-                                        <input name="teamName" type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Numero Social</label>
-                                    <div class="col-sm-10">
-                                        <input name="socialNum" type="number" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Ciudad</label>
-                                    <div class="col-sm-10">
-                                        <input name="city" type="text" class="form-control">
-                                    </div>
-                                </div>
-
-                                <button type="submit" name="btnCreate">Crear equipo</button>
-                            </form>
-                        </div>
-                    </div>
-                    
-                </div> -->
                 <!-- BASIC FORM ELELEMNTS -->
                 <div class="row mt">
                     <div class="col-lg-12">
@@ -185,6 +154,10 @@
                     </div>
                     <!-- col-lg-12-->
                 </div>
+                <!-- /row -->
+                </div>
+                <!-- /row -->
+
 
             </section>
             <! --/wrapper -->
