@@ -116,13 +116,13 @@
                             <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
                                 <div class="form-group fg">
                                     <div class="col-sm-10">
-                                        <label class="col-sm-2 col-sm-2 control-label">Id Equipo Local</label>
+                                        <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
                                         <input type="number" class="form-control" name="idTeam1result">
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
                                         <input type="number" class="form-control" name="resultTeam1">
                                     </div>
                                     <div class="col-sm-10">
-                                        <label class="col-sm-2 col-sm-2 control-label">Id Equipo Visitante</label>
+                                        <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Visitante</label>
                                         <input type="number" class="form-control" name="idTeam2result">
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Visitante</label>
                                         <input type="number" class="form-control" name="resultTeam2">

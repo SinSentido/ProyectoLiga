@@ -18,7 +18,7 @@
     /*RESULTADOS*/
     /*LOGICA DE INSERCCION*/
     if(isset($_POST['btnInputResult'])){
-        inputResult($_GET["idTeam1result"],$_GET["idTeam2result"],$_GET["idMatchResult"],$_GET["resultTeam2"]);
+        inputResult($_GET["nameTeamLocal"],$_GET["idMatchResult"],$_GET["resultTeam2"]);
         header("Location: crearResultado.php");
     }
 

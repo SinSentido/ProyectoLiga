@@ -131,6 +131,13 @@
         return $match;
     }
 
+    //Devuelve un partido buscado por Id
+    function getMatchLatestId(){
+        require './dbConnection.php';
+        $match = $database->count("partido", "*", true);
+        return $match;
+    }
+
     //Devuelve los partidos de una fecha determinada
     function getMatchesByDate($date){
         require './dbConnection.php';
@@ -193,17 +200,19 @@
     }
 
     //Inserta el resultado de dos equipos disputados en un partido 
-    function inputResult($resultIdTeam1, $resultIdTeam2, $idMatch, $result){
+    function inputResult($nameTeam, $result){
         require './dbConnection.php';
-        $database-> insert('resultado', [
-            'idPartido' => $idMatch,
-            'idEquipo' => $resultIdTeam1,
-            'resultado' => $result
-        ]);
-        $database-> insert('resultado', [
-            'idPartido' => $idMatch,
-            'idEquipo' => $resultIdTeam2,
-            'resultado' => $result
-        ]);
+        // Obtenmos el id del equipo 
+        $idTeam = getTeamByName($nameTeam);
+        // Obtenmos el id del partido 
+        $idMatchR = getMatchLatestId();
+        if($idTeam >= 0) {
+            $database-> insert('resultado', [
+                'idPartido' => $idMatchR,
+                'idEquipo' => $idTeam,
+                'resultado' => $result
+            ]);
+        };
+
     }
 ?>
