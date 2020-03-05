@@ -1952,13 +1952,6 @@ label {
     align-items: flex-start;
 }
 
-.form-horizontal.style-form .fg .col-sm-10 .makeControl,
-select {
-    background-color: rgba(255, 99, 71, 0.288);
-    color: black;
-    font-weight: bold;
-}
-
 .form-horizontal.style-form .fg .col-sm-10 label {
     margin: 15px 0 0 0;
     padding: 0;
@@ -2029,13 +2022,6 @@ label {
 
 .form-horizontal.style-form .fgEdit .edit-col-sm-10 .editControl {
     width: 30%;
-}
-
-.form-horizontal.style-form .fgEdit .edit-col-sm-10 .editControl,
-select {
-    background-color: rgba(255, 99, 71, 0.288);
-    color: black;
-    font-weight: bold;
 }
 
 

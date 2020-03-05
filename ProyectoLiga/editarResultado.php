@@ -112,25 +112,30 @@
                     <div class="col-lg-12">
                         <div class="form-panel form-panel-edit">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Formulario de Resultado</h4>
-                            <form class="form-horizontal style-form" method="get" action="buttonsLogic.php">
+                            <form class="form-horizontal style-form" method="post" action="buttonsLogic.php">
                                 <div class="form-group fg fgEdit">
                                     <div class="col-sm-10 edit-col-sm-10">
                                         <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
                                         <?php
-                                            //Mostrar un select con todos los equipos disponibles
                                             require './assets/database/queries.php';
-                                            $teams = getAllTeams();
-                                            echo "<select name=\"nameTeamLocalResult\">";
-                                            foreach($teams as $team) {
-                                                echo "<option value=" . $team['idPartido'] . ">" . $team['nombreEquipo'] . "</option> ";
-                                            }
-                                            echo "</select>";
+                                            // Obtenemos el partido del item seleccionado de la pagina de mostrar
+                                            $id = $_POST['btnResultEdit'];
+                                            // Obtenemos los partidos con ese id
+                                            $matches = getMatchById($id);
+                                            echo "<fieldset>";
+                                            echo "<label class=\"col-sm-2 col-sm-2 control-label\">Nombre del Equipo Local: ". $matches[0]['nombreEquipo'] ."</label>";
+                                            echo "<input type=\"number\" class=\"form-control editControl\" name=\"resultTeamEdit1\">";
+                                            echo "</fieldset>";
+
+                                            echo "<fieldset>";
+                                            echo "<label class=\"col-sm-2 col-sm-2 control-label\">Nombre del Equipo Visitante: ". $matches[1]['nombreEquipo'] ."</label>";
+                                            echo "<input type=\"number\" class=\"form-control editControl\" name=\"resultTeamEdit2\">";
+                                            echo "</fieldset>";
                                         ?>
-                                        <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
-                                        <input type="number" class="form-control editControl" name="resultTeam1">
                                         <div class="result">
-                                            <input type="submit" value="Crear Resultado" name="btnInputResult">
+                                            <input type="submit" value="Editar Resultado" name="btnEditResult">
                                         </div>
+                                        
                                     </div>
 
                             </form>

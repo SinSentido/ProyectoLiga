@@ -29,4 +29,18 @@
         $_POST = array();
         header("Location: index.php");
     }
+
+    /*LOGICA DE EDICION*/
+    if(isset($_POST['btnEditResult'])){
+        // Solo vamos a editar el resultado de cada equipo de dicho registro
+        // ya que se supone que ya hemos pinchado en que equipo queremos modificar
+        // entonces los label mostrará los datos de dicho usuario y solo podremos modificar los resultador de cada equipo
+        $matchId = insertMatch();
+        // Editamos el equipo 
+        updateResult($matchId,$_POST["nameTeamEditResult"],$_POST["resultTeamEdit"]);
+        header("Location: resultados.php");
+    }
+
+    /*FIN DE INSERCCION*/
+
 ?>

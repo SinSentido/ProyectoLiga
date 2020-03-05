@@ -132,7 +132,7 @@
                                         echo "<td>" . $result['fecha'] . "</td>";
                                         echo "<td>" . $result['resultado'] . "</td>";
                                         echo "<td>";
-                                        echo "<form action=\"buttonsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDeleteEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-edit btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
+                                        echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-edit btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }
