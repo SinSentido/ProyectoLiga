@@ -38,14 +38,14 @@
             <form class="form-login" action="checkLogin.php" method="POST">
                 <h2 class="form-login-heading">sign in now</h2>
                 <div class="login-wrap">
-                    <input type="text" class="form-control" placeholder="User ID" autofocus>
+                    <input type="text" name="user" class="form-control" placeholder="Usuario" autofocus>
                     <br>
 
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" name="pass" class="form-control" placeholder="Contraseña">
                     <label class="checkbox"></label>
                     </label>
 
-                    <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i>SIGN IN</button>
+                    <button class="btn btn-theme btn-block" name="login" type="submit"><i class="fa fa-lock"></i>SIGN IN</button>
                     <hr>
 
                     <div class="login-logo">
