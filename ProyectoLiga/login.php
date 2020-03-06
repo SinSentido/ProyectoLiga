@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>Gestor de ligas de baloncesto</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -38,10 +38,10 @@
             <form class="form-login" action="checkLogin.php" method="POST">
                 <h2 class="form-login-heading">sign in now</h2>
                 <div class="login-wrap">
-                    <input type="text" name="user" class="form-control" placeholder="Usuario" autofocus>
+                    <input type="text" name="user" class="form-control" placeholder="Usuario" autofocus require>
                     <br>
 
-                    <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+                    <input type="password" name="pass" class="form-control" placeholder="Contraseña" require>
                     <label class="checkbox"></label>
                     </label>
 
@@ -49,6 +49,11 @@
                     <hr>
 
                     <div class="login-logo">
+                    <?php
+                        if(isset($_GET['error'])){
+                            echo "<p class=\"error\">No se ha podido iniciar sesión</p>";
+                        }
+                    ?>
                         <img class="login-logo-img" src="assets/img/pelotaLogin.png" />
                     </div>
             </form>
