@@ -140,7 +140,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                         echo "<td>" . $result['fecha'] . "</td>";
                                         echo "<td>" . $result['resultado'] . "</td>";
                                         echo "<td>";
-                                        echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-edit btn-xs\"><i class=\"fas fa-flag\"></i></button></form>";
+                                        echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-primary btn-xs\"><i class=\"fa fa-pencil\"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }
