@@ -163,6 +163,12 @@
         return $database->max("partido", "idPartido");
     }
 
+    //Devuelve la suma de todos los partidos
+    function getAllMatchesCount($database){
+        $numOfMatches = ($database->count('partido'));
+        return $numOfMatches;
+    }
+
     /********************************************************************/
     //Queries para la tabla 'resultado'
     //Columnas: idPartido(int), idEquipo(string), resultado(number)
@@ -208,6 +214,12 @@
         require './dbConnection.php';
         $totalPoints = $database->sum("resultado", "resultado", ['idEquipo' => $teamId]);
         return $totalPoints;
+    }
+
+    //Devuelve los puntos totales anotados en la liga
+    function getTotalPointsInLeague($database){
+        $totalPointsInLeague = $database->sum("resultado", "resultado");
+        return $totalPointsInLeague;
     }
 
     //edita un resultado

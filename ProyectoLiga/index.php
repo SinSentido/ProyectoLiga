@@ -48,8 +48,10 @@
                 require './dbConnection.php';
 
                 $league = getLeagueById($database, "L1");
-                $numOfTeams = getAllTeamsCount($database);
                 $currentUser = getUserByName($database, "admin");
+                $numOfTeams = getAllTeamsCount($database);
+                $numOfMatches = getAllMatchesCount($database);
+                $totalPoints = getTotalPointsInLeague($database);
             ?>
 
             <!--logo start-->
@@ -80,7 +82,7 @@
                     <p class="centered">
                         <a href="profile.html"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
-                    <h5 class="centered">Admin</h5>
+                    <h5 class="centered"><?php echo $currentUser[0]['nombreUsuario']; ?></h5>
 
                     <li class="mt">
                         <a class="active" href="index.php">
@@ -131,23 +133,23 @@
                             <div class="col-md-4 col-sm-3 box0">
                                 <div class="box1">
                                     <span class="li_t-shirt"></span>
-                                    <h3>10</h3>
+                                    <h3><?php echo $numOfTeams; ?></h3>
                                 </div>
-                                <p>There are 10 teams in the league</p>
+                                <p>There are <?php echo $numOfTeams; ?> teams in the league</p>
                             </div>
                             <div class="col-md-4 col-sm-3 box0">
                                 <div class="box1">
                                     <span class="li_world"></span>
-                                    <h3>653</h3>
+                                    <h3><?php echo $totalPoints; ?></h3>
                                 </div>
-                                <p>653 points scored in the league</p>
+                                <p><?php echo $totalPoints; ?> points scored in the league</p>
                             </div>
                             <div class="col-md-4 col-sm-3 box0">
                                 <div class="box1">
                                     <span class="li_calendar"></span>
-                                    <h3>10</h3>
+                                    <h3><?php echo $numOfMatches; ?></h3>
                                 </div>
-                                <p>10 partidos jugados</p>
+                                <p><?php echo $numOfMatches; ?> partidos jugados</p>
                             </div>
                         </div>
                         <!-- /row mt -->
