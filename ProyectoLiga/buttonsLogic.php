@@ -1,5 +1,12 @@
 <?php
     require './assets/database/queries.php';
+    /*LIGA*/
+    /*CREAR LIGA*/
+    if(isset($_POST['btnCreateLeague'])){
+        insertLeague($_POST['leagueName'], $_POST['description']);
+        $_POST = array();
+        header("Location: index.php");
+    }
 
     /*EQUIPOS*/
     /*ELIMINAR EQUIPO*/

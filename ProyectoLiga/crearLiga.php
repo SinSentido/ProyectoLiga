@@ -44,11 +44,8 @@ if(!isset($_COOKIE['correctLogin'])){
       *********************************************************************************************************************************************************** -->
         <!--header start-->
         <header class="header black-bg">
-            <div class="sidebar-toggle-box">
-                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-            </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>Gestor de ligas de baloncesto</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -59,90 +56,34 @@ if(!isset($_COOKIE['correctLogin'])){
         <!--header end-->
 
         <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-        <!--sidebar start-->
-        <aside>
-            <div id="sidebar" class="nav-collapse ">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-
-                    <p class="centered">
-                        <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
-                    </p>
-                    <h5 class="centered">Nombre del usuario</h5>
-
-                    <li class="mt">
-                        <a href="index.php">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a class="active" href="javascript:;">
-                            <i class="fa fa-desktop"></i>
-                            <span>Equipos</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="equipos.php">Ver equipos</a></li>
-                            <li class="active"><a href="crearEquipo.php">Crear equipo</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-cogs"></i>
-                            <span>Resultados</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="resultados.php">Ver resultados</a></li>
-                            <li><a href="crearResultado.php">Nuevo resultado</a></li>
-                        </ul>
-                    </li>
-
-
-                </ul>
-                <!-- sidebar menu end-->
-            </div>
-        </aside>
-        <!--sidebar end-->
-
-        <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> Formulario Equipo</h3>
+                <h3><i class="fa fa-angle-right"></i> Formulario Liga</h3>
 
                 <!-- BASIC FORM ELELEMNTS -->
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Equipo</h4>
+                            <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Liga</h4>
 
                             <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
                                 <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Nombre Del Equipo</label>
+                                    <label class="col-sm-2 col-sm-2 control-label">Nombre de la liga</label>
                                     <div class="col-sm-10">
-                                        <input name="teamName" type="text" class="form-control">
+                                        <input name="leagueName" type="text" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Numero Social</label>
+                                    <label class="col-sm-2 col-sm-2 control-label">Descripción</label>
                                     <div class="col-sm-10">
-                                        <input name="socialNum" type="number" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Ciudad</label>
-                                    <div class="col-sm-10">
-                                        <input name="city" type="text" class="form-control">
+                                        <textarea name="description" id="" cols="50" rows="10"></textarea>
                                     </div>
                                 </div>
                                 <div class="result">
-                                    <button type="submit" name="btnCreate">Crear equipo</button>
+                                    <button type="submit" name="btnCreateLeague">Crear liga</button>
                                 </div>
                             </form>
                         </div>
@@ -160,7 +101,7 @@ if(!isset($_COOKIE['correctLogin'])){
         <footer class="site-footer">
             <div class="text-center">
                 2014 - Alvarez.is
-                <a href="crearEquipo.php#" class="go-top">
+                <a href="crearLiga.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>

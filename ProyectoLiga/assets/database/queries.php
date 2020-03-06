@@ -3,7 +3,7 @@
     //Queries para la tabla 'usuario'
     //Columnas: nombreUsuario(string), pass(string)
     /********************************************************************/
-    function getAllUsers($database){
+    function getAllUsers(){
         require './dbConnection.php';
         $users = $database->select('usuario', "*", true);
         return $users;
@@ -22,8 +22,7 @@
     /********************************************************************/
 
     //Devuelve todas las ligas en la base de datos
-    function getAllLeagues(){
-        require './dbConnection.php';
+    function getAllLeagues($database){
         $leagues = $database->select("liga", "*", true);
         return $leagues;
     }
@@ -45,7 +44,7 @@
     function insertLeague($leagueName, $leagueDescription){
         require './dbConnection.php';
         $database->insert("liga", [
-            "idLiga" => "E" . strval($database->count("liga")+1),
+            "idLiga" => "L1", //. strval($database->count("liga")+1),
             "nombreLiga" => $leagueName,
             "fechaCreacion" => date("Y-m-d"),
             "descripcion" => $leagueDescription,

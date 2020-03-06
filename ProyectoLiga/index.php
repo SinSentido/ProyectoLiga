@@ -1,3 +1,11 @@
+<?php
+
+if(!isset($_COOKIE['correctLogin'])){
+   header("Location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +55,10 @@
                 require 'assets/database/queries.php';
                 require './dbConnection.php';
 
+                if(empty(getAllLeagues($database))){
+                    header("Location: crearLiga.php");
+                }
+
                 $league = getLeagueById($database, "L1");
                 $currentUser = getUserByName($database, "admin");
                 $numOfTeams = getAllTeamsCount($database);
@@ -55,11 +67,7 @@
             ?>
 
             <!--logo start-->
-            <a href="index.php" class="logo"><b><?php 
-            
-            echo $league[0]['nombreLiga'];
-            
-            ?></b></a>
+            <a href="index.php" class="logo"><b>Gestor de ligas de baloncesto</b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -82,7 +90,7 @@
                     <p class="centered">
                         <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
-                    <h5 class="centered"><?php echo $currentUser[0]['nombreUsuario']; ?></h5>
+                    <h5 class="centered">Menu</h5>
 
                     <li class="mt">
                         <a class="active" href="index.php">
@@ -128,6 +136,7 @@
 
                 <div class="row">
                     <div class="col-lg-12 main-chart">
+                        <h1><?php echo $league[0]['nombreLiga']; ?></h1>
                         <h2><?php echo $league[0]['descripcion']; ?></h2>
                         <div class="row mtbox">
                             <div class="col-md-4 col-sm-3 box0">

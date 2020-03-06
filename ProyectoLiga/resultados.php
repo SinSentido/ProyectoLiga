@@ -1,3 +1,11 @@
+<?php
+
+if(!isset($_COOKIE['correctLogin'])){
+   header("Location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +16,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>Gestor de ligas de baloncesto</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -42,7 +50,7 @@
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.php">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -156,7 +164,7 @@
         <footer class="site-footer">
             <div class="text-center">
                 2014 - Alvarez.is
-                <a href="basic_table.html#" class="go-top">
+                <a href="resultados.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>

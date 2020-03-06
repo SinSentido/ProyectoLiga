@@ -6,6 +6,7 @@
 
         foreach($users as $user){
             if($user['nombreUsuario'] == $_POST['user'] && $user['pass'] == $_POST['pass']){
+                setcookie('correctLogin', true);
                 header("Location: index.php");
             }
         }
