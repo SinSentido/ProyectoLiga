@@ -48,7 +48,7 @@ if(!isset($_COOKIE['correctLogin'])){
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>Gestor de ligas de baloncesto</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -135,12 +135,12 @@ if(!isset($_COOKIE['correctLogin'])){
                                             $equipoNombre2 = getTeamByIdWithDB($matches[1]["idEquipo"], $database );
                                             echo "<fieldset>";
                                             echo "<label class=\"col-sm-2 col-sm-2 control-label labelPerso\">Nombre del Equipo Local: ". "<span>" .$equipoNombre1[0]["nombreEquipo"]. "</span>" ."</label>";
-                                            echo "<input type=\"number\" class=\"form-control editControl\" name=\"resultTeamEdit1\">";
+                                            echo "<input type=\"number\" class=\"form-control editControl\" min=\"0\" name=\"resultTeamEdit1\">";
                                             echo "</fieldset>";
 
                                             echo "<fieldset>";
                                             echo "<label class=\"col-sm-2 col-sm-2 control-label labelPerso\">Nombre del Equipo Visitante: ". "<span>" . $equipoNombre2[0]["nombreEquipo"]. "</span>" ."</label>";
-                                            echo "<input type=\"number\" class=\"form-control editControl\" name=\"resultTeamEdit2\">";
+                                            echo "<input type=\"number\" class=\"form-control editControl\" min=\"0\" name=\"resultTeamEdit2\">";
                                             echo "</fieldset>";
 
 

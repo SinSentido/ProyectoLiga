@@ -126,7 +126,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Nombre Del Equipo</label>
                                     <div class="col-sm-10">
-                                        <input name="teamName" type="text" class="form-control">
+                                        <input name="teamName" type="text" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group">

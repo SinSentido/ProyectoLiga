@@ -139,7 +139,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                         <!--Fin bloque php-->
 
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Equipo Local</label>
-                                        <input type="number" class="form-control" name="resultLocal">
+                                        <input type="number" min="0" class="form-control" name="resultLocal">
                                     </div>
 
                                     <div class="col-sm-10">
@@ -157,7 +157,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                         <!--Fin bloque php-->
 
                                         <label class="col-sm-2 col-sm-2 control-label">Resultado Visitante</label>
-                                        <input type="number" class="form-control" name="resultVisitant">
+                                        <input type="number" min="0" class="form-control" name="resultVisitant">
                                     </div>
                                 </div>
                                 <div class="result">
