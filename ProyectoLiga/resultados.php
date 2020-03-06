@@ -140,7 +140,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                         echo "<td>" . $result['fecha'] . "</td>";
                                         echo "<td>" . $result['resultado'] . "</td>";
                                         echo "<td>";
-                                        echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-edit btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
+                                        echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-edit btn-xs\"><i class=\"fas fa-flag\"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
                                     }
@@ -164,9 +164,6 @@ if(!isset($_COOKIE['correctLogin'])){
         <footer class="site-footer">
             <div class="text-center">
                 2014 - Alvarez.is
-                <a href="resultados.php#" class="go-top">
-                    <i class="fa fa-angle-up"></i>
-                </a>
             </div>
         </footer>
         <!--footer end-->
