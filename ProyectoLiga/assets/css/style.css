@@ -2007,21 +2007,45 @@ button:hover {
 }
 
 .form-horizontal.style-form .fgEdit .edit-col-sm-10 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "AR1 AR2" "BTN BTN";
     width: 100%;
 }
 
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 fieldset:nth-child(1) {
+    grid-area: AR1;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 fieldset:nth-child(2) {
+    grid-area: AR2;
+}
+
 .form-horizontal.style-form .fgEdit .edit-col-sm-10 .result {
-    width: 8%;
+    grid-area: BTN;
+    width: 100%;
     margin-top: 20px;
 }
 
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 .result input,
+button {
+    width: 20%;
+}
+
 .form-horizontal.style-form .fgEdit .edit-col-sm-10 input,
-label {
+.labelPerso {
     width: 100%;
 }
 
 .form-horizontal.style-form .fgEdit .edit-col-sm-10 .editControl {
-    width: 30%;
+    margin-top: 5px;
+    width: 40%;
 }
 
 
@@ -2569,4 +2593,19 @@ label {
 
 .site-min-height {
     min-height: 900px;
+}
+
+
+/*CSS Establecido*/
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 .labelPerso {
+    width: 100%;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 .labelPerso span {
+    color: blue;
+}
+
+.form-horizontal.style-form .fgEdit .edit-col-sm-10 .inputInvisible {
+    display: none;
 }

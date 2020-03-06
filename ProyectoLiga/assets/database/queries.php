@@ -106,6 +106,11 @@
         $team = $database->select("equipo", "*", ['idEquipo' => $teamId]);
         return $team;
     }
+    //Devuelve un equipo buscado por Id y pasando la base de datos
+    function getTeamByIdWithDB($teamId, $database){
+        $team = $database->select("equipo", "*", ['idEquipo' => $teamId]);
+        return $team;
+    }
 
     //Devuelve la suma de todos los equipos
     function getAllTeamsCount($database){
@@ -118,6 +123,8 @@
         require './dbConnection.php';
         $database->delete("equipo", ['idEquipo' => $teamId]);
     }
+
+
 
 
     /********************************************************************/
@@ -156,6 +163,14 @@
     //Crea un nuevo partido
     function insertMatch(){
         require './dbConnection.php';
+        $database->insert('partido', [
+            'idPartido' => ($database->max("partido", "idPartido")+1),
+            'fecha' => date('Y-m-d')
+        ]);
+        return $database->max("partido", "idPartido");
+    }
+    //Crea un nuevo partido pasando la bd
+    function insertMatchWithDB($database){
         $database->insert('partido', [
             'idPartido' => ($database->max("partido", "idPartido")+1),
             'fecha' => date('Y-m-d')
@@ -203,6 +218,12 @@
         return $results;
     }
 
+    //Devuelve los resultados de un partido indicado por su Id
+    function getResultsByMatchWithDB($matchId, $database){
+        $results = $database->select("resultado", "*", ['idPartido' => $matchId]);
+        return $results;
+    }
+
     //Devuelve el equipo con más puntos de un partido en concreto indicado por su Id
     function getWinnerTeamByMatch($matchId){
         require './dbConnection.php';
@@ -223,13 +244,11 @@
     }
 
     //edita un resultado
-    function updateResult($idMatch,$resultIdTeam,$result){
-        require './dbConnection.php';
+    function updateResultWithDB($idMatch, $idTeam, $result, $database){
         $database->update("resultado",[
-            "idPartido" => $idMatch,
-            "idEquipo" => $result,
-            "resultado" => $resultIdTeam
-        ]);
+            "idEquipo" => $idTeam,
+            "resultado" => $result
+        ], ['idPartido' => $idMatch] );
     }
 
     //Inserta el resultado 

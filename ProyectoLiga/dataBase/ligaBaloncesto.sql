@@ -35,7 +35,7 @@ CREATE TABLE `equipo` (
   `nSocial` varchar(255) NOT NULL,
   `ciudad` varchar(255) DEFAULT NULL,
   `fechaCreacion` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `equipo`
@@ -56,7 +56,7 @@ CREATE TABLE `liga` (
   `fechaCreacion` date DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   `activa` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `liga`
@@ -74,7 +74,7 @@ INSERT INTO `liga` (`idLiga`, `nombreLiga`, `fechaCreacion`, `descripcion`, `act
 CREATE TABLE `partido` (
   `idPartido` varchar(3) NOT NULL,
   `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,7 @@ CREATE TABLE `resultado` (
   `idPartido` varchar(3) NOT NULL,
   `idEquipo` varchar(4) NOT NULL,
   `resultado` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Índices para tablas volcadas
