@@ -115,22 +115,31 @@
                             <form class="form-horizontal style-form" method="post" action="buttonsLogic.php">
                                 <div class="form-group fg fgEdit">
                                     <div class="col-sm-10 edit-col-sm-10">
-                                        <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo Local</label>
                                         <?php
+                                            require './dbConnection.php';
                                             require './assets/database/queries.php';
                                             // Obtenemos el partido del item seleccionado de la pagina de mostrar
                                             $id = $_POST['btnResultEdit'];
                                             // Obtenemos los partidos con ese id
-                                            $matches = getMatchById($id);
+                                            $matches = getResultsByMatchWithDB($id, $database);
+                                            // Obtenemos los equipos para mostrar sus nombres con el id de de los equipos que jugaron ese partido
+                                            $equipoNombre1 = getTeamByIdWithDB($matches[0]["idEquipo"], $database );
+                                            $equipoNombre2 = getTeamByIdWithDB($matches[1]["idEquipo"], $database );
                                             echo "<fieldset>";
-                                            echo "<label class=\"col-sm-2 col-sm-2 control-label\">Nombre del Equipo Local: ". $matches[0]['nombreEquipo'] ."</label>";
+                                            echo "<label class=\"col-sm-2 col-sm-2 control-label labelPerso\">Nombre del Equipo Local: ". "<span>" .$equipoNombre1[0]["nombreEquipo"]. "</span>" ."</label>";
                                             echo "<input type=\"number\" class=\"form-control editControl\" name=\"resultTeamEdit1\">";
                                             echo "</fieldset>";
 
                                             echo "<fieldset>";
-                                            echo "<label class=\"col-sm-2 col-sm-2 control-label\">Nombre del Equipo Visitante: ". $matches[1]['nombreEquipo'] ."</label>";
+                                            echo "<label class=\"col-sm-2 col-sm-2 control-label labelPerso\">Nombre del Equipo Visitante: ". "<span>" . $equipoNombre2[0]["nombreEquipo"]. "</span>" ."</label>";
                                             echo "<input type=\"number\" class=\"form-control editControl\" name=\"resultTeamEdit2\">";
                                             echo "</fieldset>";
+                                            // Con este input invisible volvemos ha pasar el id hacia el otro documento.
+                                            echo "<input type=\"number\" class=\"inputInvisible\" name=\"idMatch\" value=\"$id\">";
+                                            // Con este el id del equipo 1.
+                                            echo "<input type=\"number\" class=\"inputInvisible\" name=\"idTeam1\" value=\"" . $matches[0]["idEquipo"] . "\">";
+                                            // Con este el id del equipo 2.
+                                            echo "<input type=\"number\" class=\"inputInvisible\" name=\"idTeam2\" value=\"" . $matches[1]["idEquipo"] . "\">";
                                         ?>
                                         <div class="result">
                                             <input type="submit" value="Editar Resultado" name="btnEditResult">
@@ -145,7 +154,6 @@
                 </div>
 
             </section>
-            <! --/wrapper -->
         </section>
         <!-- /MAIN CONTENT -->
 
