@@ -42,7 +42,7 @@
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.php">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -162,7 +162,7 @@
         <footer class="site-footer">
             <div class="text-center">
                 2014 - Alvarez.is
-                <a href="basic_table.html#" class="go-top">
+                <a href="equipos.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>

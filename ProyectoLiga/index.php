@@ -55,7 +55,7 @@
             ?>
 
             <!--logo start-->
-            <a href="index.html" class="logo"><b><?php 
+            <a href="index.php" class="logo"><b><?php 
             
             echo $league[0]['nombreLiga'];
             
@@ -64,7 +64,7 @@
 
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="login.php">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -80,7 +80,7 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <p class="centered">
-                        <a href="profile.html"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
+                        <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
                     <h5 class="centered"><?php echo $currentUser[0]['nombreUsuario']; ?></h5>
 
@@ -247,7 +247,7 @@
         <footer class="site-footer">
             <div class="text-center">
                 2014 - Alvarez.is
-                <a href="index.html#" class="go-top">
+                <a href="index.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>
