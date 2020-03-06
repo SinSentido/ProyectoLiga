@@ -244,10 +244,10 @@
 
     //edita un resultado
     function updateResultWithDB($idMatch, $idTeam, $result, $database){
-        $database->update("resultado",[
-            "idEquipo" => $idTeam,
-            "resultado" => $result
-        ], ['idPartido' => $idMatch] );
+        $algo = $idMatch;
+        $algo1 = $idTeam;
+        $algo2 = $result;
+        $database->update("resultado",["idEquipo" => $idTeam,"resultado" => $result],["idPartido" => $idMatch ]);
     }
 
     //Inserta el resultado 

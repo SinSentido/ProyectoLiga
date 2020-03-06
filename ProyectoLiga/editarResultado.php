@@ -142,12 +142,18 @@ if(!isset($_COOKIE['correctLogin'])){
                                             echo "<label class=\"col-sm-2 col-sm-2 control-label labelPerso\">Nombre del Equipo Visitante: ". "<span>" . $equipoNombre2[0]["nombreEquipo"]. "</span>" ."</label>";
                                             echo "<input type=\"number\" class=\"form-control editControl\" name=\"resultTeamEdit2\">";
                                             echo "</fieldset>";
-                                            // Con este input invisible volvemos ha pasar el id hacia el otro documento.
-                                            echo "<input type=\"number\" class=\"inputInvisible\" name=\"idMatch\" value=\"$id\">";
-                                            // Con este el id del equipo 1.
-                                            echo "<input type=\"number\" class=\"inputInvisible\" name=\"idTeam1\" value=\"" . $matches[0]["idEquipo"] . "\">";
-                                            // Con este el id del equipo 2.
-                                            echo "<input type=\"number\" class=\"inputInvisible\" name=\"idTeam2\" value=\"" . $matches[1]["idEquipo"] . "\">";
+
+
+                                            // Estos selects estaran invisible solo sirven para pasar datos entre documentos.
+                                            echo "<select name=\"idMatch\" class=\"inputInvisible\">";
+                                                echo "<option name=\"\" value =\"" . $id . "\"></option>";
+                                            echo "</select>";
+                                            echo "<select name=\"idTeam1\" class=\"inputInvisible\">";
+                                                echo "<option name=\"\" value =\"" . $matches[0]["idEquipo"] . "\"></option>";
+                                            echo "</select>";
+                                            echo "<select name=\"idTeam2\" class=\"inputInvisible\">";
+                                                echo "<option name=\"\" value =\"" . $matches[1]["idEquipo"] . "\"></option>";
+                                            echo "</select>";
                                         ?>
                                         <div class="result">
                                             <input type="submit" value="Editar Resultado" name="btnEditResult">
