@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+    <title>Proyecto Liga HLC</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -42,8 +42,22 @@
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
+
+            <?php
+                require 'assets/database/queries.php';
+                require './dbConnection.php';
+
+                $league = getLeagueById($database, "L1");
+                $numOfTeams = getAllTeamsCount($database);
+                $currentUser = getUserByName($database, "admin");
+            ?>
+
             <!--logo start-->
-            <a href="index.html" class="logo"><b>El nombre de tu liga</b></a>
+            <a href="index.html" class="logo"><b><?php 
+            
+            echo $league[0]['nombreLiga'];
+            
+            ?></b></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -66,7 +80,7 @@
                     <p class="centered">
                         <a href="profile.html"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
-                    <h5 class="centered">Nombre del usuario</h5>
+                    <h5 class="centered">Admin</h5>
 
                     <li class="mt">
                         <a class="active" href="index.php">
@@ -112,7 +126,7 @@
 
                 <div class="row">
                     <div class="col-lg-12 main-chart">
-
+                        <h2><?php echo $league[0]['descripcion']; ?></h2>
                         <div class="row mtbox">
                             <div class="col-md-4 col-sm-3 box0">
                                 <div class="box1">
@@ -265,7 +279,7 @@
                 // (string | mandatory) the heading of the notification
                 title: 'Bienvenido a tu liga',
                 // (string | mandatory) the text inside the notification
-                text: 'En este recuadro de texto aparecerá la descripción de tu liga',
+                text: 'Desde este panel de administración podrás gestionar tu liga',
                 // (string | optional) the image to display on the left
                 image: 'assets/img/pelotaLogin.png',
                 // (bool | optional) if you want it to fade out on its own or just sit there

@@ -3,10 +3,15 @@
     //Queries para la tabla 'usuario'
     //Columnas: nombreUsuario(string), pass(string)
     /********************************************************************/
-    function getAllUsers(){
+    function getAllUsers($database){
         require './dbConnection.php';
         $users = $database->select('usuario', "*", true);
         return $users;
+    }
+
+    function getUserByName($database, $name){
+        $currentUser = $database->select('usuario', '*', ['nombreUsuario' => $name]);
+        return $currentUser;
     }
 
 
@@ -31,8 +36,7 @@
     }
 
     //Devuelve una liga buscada por Id
-    function getLeagueById($leagueId){
-        require './dbConnection.php';
+    function getLeagueById($database, $leagueId){
         $league = $database->select("liga", "*", ['idLiga' => $leagueId]);
         return $league;
     }
@@ -101,6 +105,12 @@
         require './dbConnection.php';
         $team = $database->select("equipo", "*", ['idEquipo' => $teamId]);
         return $team;
+    }
+
+    //Devuelve la suma de todos los equipos
+    function getAllTeamsCount($database){
+        $numOfTeams = $database->count('equipo');
+        return $numOfTeams;
     }
 
     //Borra un equipo indicado por su Id
