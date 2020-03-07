@@ -1,7 +1,6 @@
 <?php
     require './assets/database/queries.php';
 
-
     /*************************** LIGA ***************************/
     /*Crear liga*/
     if(isset($_POST['btnCreateLeague'])){

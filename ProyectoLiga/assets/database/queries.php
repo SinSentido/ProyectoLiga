@@ -95,6 +95,14 @@
         return $teams;
     }
 
+    //Devuelve todos los equipos ordenados por nombre
+    function getAllTeamsOrderedByName($database){
+        $teams = $database->select("equipo", "*", [
+            "ORDER" => "nombreEquipo"
+        ]);
+        return $teams;
+    }
+
     //Devuelve todos los equipo pertenecientes a una liga
     function getAllTeamsByLeague($leagueId){
         require './dbConnection.php';
@@ -286,6 +294,35 @@
             'idPartido' => $matchId,
             'idEquipo' => $idVisitant,
             'resultado' => $resultVisitant
+        ]);
+    }
+
+
+
+    /********************************************************************/
+    //Queries para la tabla 'evento'
+    //Columnas: idEvento(int), title(string), start(date)
+    /********************************************************************/
+
+    //Devuelve todos los eventos
+    function getAllEvents($database){
+        $events = $database->select('evento', '*', true);
+        return $events;
+    }
+
+    function getAllEventsInfo($database){
+        $events = $database->select('evento', [
+            "title",
+            "start"
+        ], true);
+        return $events;
+    }
+
+    //Inserta un nuevo evento
+    function insertEvent($database, $title, $date){
+        $database->insert('evento', [
+            "title" => $title,
+            "start" => $date
         ]);
     }
 ?>

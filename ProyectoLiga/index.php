@@ -142,7 +142,7 @@ if(!isset($_COOKIE['correctLogin'])){
                 
                     <!-- RANKING -->
                     <li class="mt">
-                        <a href="editarLiga.php">
+                        <a href="ranking.php">
                             <i class="fa fa-star"></i>
                             <span>Ranking</span>
                         </a>
@@ -150,7 +150,7 @@ if(!isset($_COOKIE['correctLogin'])){
 
                     <!--CALENDARIO DE PARTIDOS-->
                     <li>
-                        <a href="editarLiga.php">
+                        <a href="calendarioPartidos.php">
                             <i class="fa fa-calendar"></i>
                             <span>Calendario de partidos</span>
                         </a>
