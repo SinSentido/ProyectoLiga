@@ -1,5 +1,6 @@
 <?php
 
+//Si no se ha hecho login redirección inmediatamente a la página de login
 if(!isset($_COOKIE['correctLogin'])){
    header("Location: login.php");
 }

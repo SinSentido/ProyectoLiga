@@ -1,5 +1,8 @@
 <?php
     if(isset($_COOKIE['correctLogin'])){
-        header("Location: login.php");
+        //Destruye la cookie
+        setcookie('correctLogin', "", time() -3600);
     }
+    //Vuelve al login
+    header("Location: login.php");
 ?>
