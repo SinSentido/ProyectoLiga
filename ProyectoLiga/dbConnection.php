@@ -11,6 +11,6 @@
         'database_name' => 'ligaBaloncesto',
         'server' => 'localhost',
         'username' => 'root',
-        'password' => 'libertas'
+        'password' => ''
     ]);
 ?>

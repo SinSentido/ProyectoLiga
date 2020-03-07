@@ -208,15 +208,36 @@
     //Columnas: idPartido(int), idEquipo(string), resultado(number)
     /********************************************************************/
     
+    //Devuelve todos los resultados con el idDePartido
+    function getAllResultByMatch($database, $idMatch){
+        $results = $database->select("resultado",
+        ["[><]equipo" => ["idEquipo" => "idEquipo"],
+         "[><]partido" => ["idPartido" => "idPartido"]], 
+         [
+            "resultado.idPartido",
+            "partido.fecha",
+            "resultado.idEquipo",
+            "equipo.nombreEquipo",
+            "resultado"
+         ],
+         [
+             "resultado.idPartido" => "$idMatch"
+         ],
+         [
+            'GROUP' => 'resultado.idPartido'
+         ]);
+        return $results;
+    }
+
+
     //Devuelve todos los resultados
-    function getAllResults(){
+    function getAllResults($database){
         require './dbConnection.php';
         $results = $database->select("resultado", "*", true);
         return $results;
     }
 
-    function getAllResultsWithTeam(){
-        require './dbConnection.php';
+    function getAllResultsWithTeam($database){
         $results = $database->select("resultado",
         ["[><]equipo" => ["idEquipo" => "idEquipo"],
          "[><]partido" => ["idPartido" => "idPartido"]], 

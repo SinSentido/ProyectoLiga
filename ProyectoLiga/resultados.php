@@ -118,7 +118,7 @@ if(!isset($_COOKIE['correctLogin'])){
                     <div class="col-md-12">
                         <div class="content-panel">
                             <table class="table table-striped table-advance table-hover">
-                                <h4><i class="fa fa-angle-right"></i> Equipos</h4>
+                                <h4><i class="fa fa-angle-right"></i> Resultados Individuales</h4>
                                 <hr>
                                 <thead>
                                     <tr>
@@ -131,8 +131,10 @@ if(!isset($_COOKIE['correctLogin'])){
                                 </thead>
                                 <!-- PHP FOR THE TABLE RESULTS -->
                                 <?php
+                                
+                                    require './dbConnection.php';
                                     require './assets/database/queries.php';
-                                    $results = getAllResultsWithTeam();
+                                    $results = getAllResultsWithTeam($database);
                                     foreach($results as $result) {
                                         echo "<tr>";
                                         echo "<td>" . $result['idPartido'] . "</td>";
@@ -143,6 +145,55 @@ if(!isset($_COOKIE['correctLogin'])){
                                         echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $result['idPartido'] . "\" class=\"btn btn-primary btn-xs\"><i class=\"fa fa-pencil\"></i></button></form>";
                                         echo "</td>";
                                         echo "</tr>";
+                                    }
+                                ?>
+                                    <!-- END OF PHP -->
+                            </table>
+                        </div>
+                        <!-- /content-panel -->
+                    </div>
+                    <!-- /col-md-12 -->
+                </div>
+                
+
+                <!-- RESULTADOS COMPLETOS CON LOS DOS EQUIPOS: -->
+                <!-- /row -->
+                <div class="row mt">
+                    <div class="col-md-12">
+                        <div class="content-panel">
+                            <table class="table table-striped table-advance table-hover">
+                                <h4><i class="fa fa-angle-right"></i> Resultados</h4>
+                                <hr>
+                                <thead>
+                                    <tr>
+                                        <th><i class="hidden-phone"></i> ID_Partido</th>
+                                        <th class="hidden-phone"><i class="fa fa-question-circle"></i> Nombre del Equipo Local</th>
+                                        <th class="hidden-phone"><i class="fa fa-question-circle"></i> Resultado Local</th>
+                                        <th class="hidden-phone"><i class="fa fa-question-circle"></i> Nombre del Equipo Visitante</th>
+                                        <th class="hidden-phone"><i class="fa fa-question-circle"></i> Resultado Visitante</th>
+                                        <th><i class="hidden-phone"></i> Fecha del Partido</th<i>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <!-- PHP FOR THE TABLE RESULTS -->
+                                <?php
+                                    $aux = -1;
+                                    foreach($results as $result) {
+                                        if($aux != $result["idPartido"]){
+                                            $resultsCompleted = getAllResultByMatch($database,$result["idPartido"]);
+                                            echo "<tr>";
+                                            echo "<td>" . $resultsCompleted[0]['idPartido'] . "</td>";
+                                            echo "<td>" . $resultsCompleted[0]['nombreEquipo'] . "</td>";
+                                            echo "<td>" . $resultsCompleted[0]['resultado'] . "</td>";
+                                            echo "<td>" . $resultsCompleted[1]['nombreEquipo'] . "</td>";
+                                            echo "<td>" . $resultsCompleted[1]['resultado'] . "</td>";
+                                            echo "<td>" . $resultsCompleted[1]['fecha'] . "</td>";
+                                            echo "<td>";
+                                            echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $resultsCompleted[0]['idPartido'] . "\" class=\"btn btn-primary btn-xs\"><i class=\"fa fa-pencil\"></i></button></form>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                            $aux = $result["idPartido"];
+                                        }
                                     }
                                 ?>
                                     <!-- END OF PHP -->
