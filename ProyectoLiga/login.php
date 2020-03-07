@@ -38,10 +38,10 @@
             <form class="form-login" action="checkLogin.php" method="POST">
                 <h2 class="form-login-heading">sign in now</h2>
                 <div class="login-wrap">
-                    <input type="text" name="user" class="form-control" placeholder="Usuario" autofocus require>
+                    <input type="text" name="user" class="form-control" placeholder="Usuario" autofocus required>
                     <br>
 
-                    <input type="password" name="pass" class="form-control" placeholder="Contraseña" require>
+                    <input type="password" name="pass" class="form-control" placeholder="Contraseña" required>
                     <label class="checkbox"></label>
                     </label>
 

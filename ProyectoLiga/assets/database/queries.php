@@ -15,6 +15,7 @@
     }
 
 
+
     /********************************************************************/
     //Queries para la tabla 'liga'
     //Columnas: idLiga(string), nombreLiga(string), fechaCreacion(date), descripcion(string),
@@ -28,8 +29,7 @@
     }
 
     //Devuelve una liga buscada por nombre
-    function getLeagueByName($name){
-        require './dbConnection.php';
+    function getLeagueByName($database, $name){
         $league = $database->select("liga", "*", ['nombreLiga' => $name]);
         return $league;
     }
@@ -52,11 +52,22 @@
         ]);
     }
 
+    //Actualiza los datos de una liga
+    function updateLeague($database, $leagueId, $name, $description){
+        $database->update('liga', [
+            'nombreLiga' => $name,
+            'descripcion' => $description
+        ],[
+            'idLiga' => $leagueId
+        ]);
+    }
+
     //Marca una liga como inactiva
-    function deleteLeague($leagueId){
-        require './dbConnection.php';
+    function deleteLeague($database, $leagueId){
         $database->update("liga", ["activa" => false], ["idLiga" => $leagueId]);
     }
+
+
 
     /********************************************************************/
     //Queries para la tabla 'equipo'
@@ -125,7 +136,6 @@
 
 
 
-
     /********************************************************************/
     //Queries para la tabla 'partido'
     //Columnas: idPartido(int), fecha(date)
@@ -182,6 +192,8 @@
         $numOfMatches = ($database->count('partido'));
         return $numOfMatches;
     }
+
+
 
     /********************************************************************/
     //Queries para la tabla 'resultado'

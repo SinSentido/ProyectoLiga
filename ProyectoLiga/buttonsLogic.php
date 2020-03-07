@@ -1,43 +1,55 @@
 <?php
     require './assets/database/queries.php';
-    /*LIGA*/
-    /*CREAR LIGA*/
+
+
+    /*************************** LIGA ***************************/
+    /*Crear liga*/
     if(isset($_POST['btnCreateLeague'])){
         insertLeague($_POST['leagueName'], $_POST['description']);
+
         $_POST = array();
         header("Location: index.php");
     }
 
-    /*EQUIPOS*/
+    /*Editar liga*/
+    if(isset($_POST['btnEditLeague'])){ 
+        require './dbConnection.php';
+        updateLeague($database, 'L1', $_POST['leagueName'], $_POST['description']);
+
+        $_POST = array();
+        header("Location: index.php");
+    }
+
+
+    /*************************** EQUIPOS ***************************/
     /*ELIMINAR EQUIPO*/
     if(isset($_POST['btnDelete'])) { 
         deleteTeam($_POST['btnDelete']);
+
         $_POST = array();
         header("Location: equipos.php");
     } 
 
+    /* EQUIPO */
     /*CREAR EQUIPO */
     if(isset($_POST['btnCreate'])){
         insertTeam($_POST['teamName'], $_POST['socialNum'], $_POST['city']);
+
         $_POST = array();
         header("Location: crearEquipo.php");
     }
 
-    /*RESULTADOS*/
-    /*INSERTAR RESULTADO*/
+
+    /*************************** RESULTADOS ***************************/
+    /*Crear resultado*/
     if(isset($_POST['btnInputResult'])){
-
-        // Insertamos el equipo local con dicho ultimo partido
         insertResult($_POST['teamLocal'], $_POST['resultLocal'], $_POST['teamVisitant'], $_POST['resultVisitant']);
-
-        // Insertamos el equipo visitante con dicho ultimo partido
-        //insertResult($_POST['teamVisitant'], $matchId, $_POST['resultVisitant']);
 
         $_POST = array();
         header("Location: resultados.php");
     }
 
-    /*LOGICA DE EDICION*/
+    /*Editar resultado*/
     if(isset($_POST['btnEditResult'])){
         require './dbConnection.php';
         // Solo vamos a editar el resultado de cada equipo de dicho registro
@@ -48,9 +60,9 @@
         updateResultWithDB($_POST["idMatch"],$_POST["idTeam1"], $_POST["resultTeamEdit1"],$database);
         // Editamos el resultado del segundo equipo
         updateResultWithDB($_POST["idMatch"],$_POST["idTeam2"], $_POST["resultTeamEdit2"],$database);
+
+        $_POST = array();
         header("Location: resultados.php");
     }
-
-    /*FIN DE INSERCCION*/
 
 ?>
