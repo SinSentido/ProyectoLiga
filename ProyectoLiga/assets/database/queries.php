@@ -106,19 +106,12 @@
         return $teams;
     }
 
-    require '../../dbConnection.php';
-    getAllTeamsVictories($database);
-
     //Devuelve todos los equipos ordenados por su número de victorias
-    function getAllTeamsVictories($database){
+    function getTeamsWithTotalMatches($database){
         echo "hola";
-        //$matches = getAllMatches($database);
-        $teams = [];
 
-        $partidosJugados = $database->select('equipo', [
-            "nombreEquipo",
-            $database->count('resultado', ["equipo.idEquipo[<>]resutado.idEquipo",])
-        ], []);
+        $partidosJugados = $database->query("SELECT <nombreEquipo>, COUNT(<resultado.idPartido>) AS <partidos> FROM <equipo> 
+            JOIN <resultado> ON <equipo.idEquipo> = <resultado.idEquipo> GROUP BY 1")->fetchAll();
 
         print_r($partidosJugados);
     }
