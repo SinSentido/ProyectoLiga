@@ -258,7 +258,9 @@
             "resultado.idEquipo",
             "equipo.nombreEquipo",
             "resultado"
-        ]);
+         ],[
+             'ORDER' => 'idPartido'
+         ]);
         return $results;
     }
 

@@ -50,7 +50,7 @@ if(!isset($_COOKIE['correctLogin'])){
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.php">Logout</a></li>
+                    <li><a class="logout" href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -154,6 +154,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                     require './dbConnection.php';
                                     require './assets/database/queries.php';
                                     $results = getAllResultsWithTeam($database);
+
                                     foreach($results as $result) {
                                         echo "<tr>";
                                         echo "<td>" . $result['idPartido'] . "</td>";
