@@ -243,7 +243,8 @@
              "resultado.idPartido" => "$idMatch"
          ],
          [
-            'GROUP' => 'resultado.idPartido'
+            'GROUP' => 'resultado.idPartido',
+            'ORDER' => ["resultado.idPartido" => "DESC"]
          ]);
         return $results;
     }
