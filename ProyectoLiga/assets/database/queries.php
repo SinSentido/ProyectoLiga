@@ -3,12 +3,15 @@
     //Queries para la tabla 'usuario'
     //Columnas: nombreUsuario(string), pass(string)
     /********************************************************************/
+    
+    //Devuelve todos los usuario en la base de datos
     function getAllUsers(){
         require './dbConnection.php';
         $users = $database->select('usuario', "*", true);
         return $users;
     }
 
+    //Devuelve un usuario segun el nombre indicado por parámetro
     function getUserByName($database, $name){
         $currentUser = $database->select('usuario', '*', ['nombreUsuario' => $name]);
         return $currentUser;
@@ -103,6 +106,23 @@
         return $teams;
     }
 
+    require '../../dbConnection.php';
+    getAllTeamsVictories($database);
+
+    //Devuelve todos los equipos ordenados por su número de victorias
+    function getAllTeamsVictories($database){
+        echo "hola";
+        //$matches = getAllMatches($database);
+        $teams = [];
+
+        $partidosJugados = $database->select('equipo', [
+            "nombreEquipo",
+            $database->count('resultado', ["equipo.idEquipo[<>]resutado.idEquipo",])
+        ], []);
+
+        print_r($partidosJugados);
+    }
+
     //Devuelve todos los equipo pertenecientes a una liga
     function getAllTeamsByLeague($leagueId){
         require './dbConnection.php';
@@ -150,8 +170,7 @@
     /********************************************************************/
 
     //Devuelve todos los partidos
-    function getAllMatches(){
-        require './dbConnection.php';
+    function getAllMatches($database){
         $matches = $database->select("partido", "*", true);
         return $matches;
     }
@@ -232,7 +251,6 @@
 
     //Devuelve todos los resultados
     function getAllResults($database){
-        require './dbConnection.php';
         $results = $database->select("resultado", "*", true);
         return $results;
     }
@@ -331,6 +349,7 @@
         return $events;
     }
 
+    //Devuelve solo la información necesaria para pintar los eventos en el calendario
     function getAllEventsInfo($database){
         $events = $database->select('evento', [
             "title",
