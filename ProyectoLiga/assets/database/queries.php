@@ -210,23 +210,30 @@
     
     //Devuelve todos los resultados con el idDePartido
     function getAllResultByMatch($database, $idMatch){
-        $results = $database->select("resultado",
-        ["[><]equipo" => ["idEquipo" => "idEquipo"],
-         "[><]partido" => ["idPartido" => "idPartido"]], 
-         [
-            "resultado.idPartido",
-            "partido.fecha",
-            "resultado.idEquipo",
-            "equipo.nombreEquipo",
-            "resultado"
-         ],
-         [
-             "resultado.idPartido" => "$idMatch"
-         ],
-         [
-            'GROUP' => 'resultado.idPartido',
-            'ORDER' => ["resultado.idPartido" => "DESC"]
-         ]);
+
+        $results = $database->query(
+            "SELECT * FROM <resultado>, <partido>, <equipo> WHERE <resultado.idPartido> = <partido.idPartido> AND <resultado.idEquipo> = <equipo.idEquipo> AND <resultado.idPartido> = :id ORDER BY <resultado.idPartido> DESC",[
+                ":id" => $idMatch
+            ]
+        )->fetchAll();
+
+        // $results = $database->select("resultado",
+        // ["[><]equipo" => ["idEquipo" => "idEquipo"],
+        //  "[><]partido" => ["idPartido" => "idPartido"]], 
+        //  [
+        //     "resultado.idPartido",
+        //     "partido.fecha",
+        //     "resultado.idEquipo",
+        //     "equipo.nombreEquipo",
+        //     "resultado"
+        //  ],
+        //  [
+        //      "resultado.idPartido" => "$idMatch"
+        //  ],
+        //  [
+        //     'GROUP' => 'resultado.idPartido',
+        //     'ORDER' => ["resultado.idPartido" => "DESC"]
+        //  ]);
         return $results;
     }
 
