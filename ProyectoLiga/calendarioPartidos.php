@@ -70,94 +70,91 @@
         </header>
       <!--header end-->
       
-      <!-- **********************************************************************************************************************************************************
+   <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-              
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
-              	  	
-                  <li class="mt">
-                      <a href="index.html">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>UI Elements</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
-                      </ul>
-                  </li>
+                    <p class="centered">
+                        <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
+                    </p>
+                    <h5 class="centered">Menu</h5>
 
-                  <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Components</span>
-                      </a>
-                      <ul class="sub">
-                          <li class="active"><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Extra Pages</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Data Tables</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
-                      </ul>
-                  </li>
+                    <!--DASHBOARD-->
+                    <li class="mt">
+                        <a href="index.php">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
 
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
+                    <hr>
+
+                    <h4 class="sidebar-subtitle">Configuración</h4>
+
+                    <!--EDITAR LIGA-->
+                    <li class="mt">
+                        <a href="editarLiga.php">
+                            <i class="fa fa-pencil-square"></i>
+                            <span>Editar liga</span>
+                        </a>
+                    </li>
+
+                    <!--EQUIPOS-->
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-desktop"></i>
+                            <span>Equipos</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="equipos.php">Ver equipos</a></li>
+                            <li><a href="crearEquipo.php">Crear equipo</a></li>
+                        </ul>
+                    </li>
+
+                    <!--RESULTADOS-->
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-cogs"></i>
+                            <span>Resultados</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="resultados.php">Ver resultados</a></li>
+                            <li><a href="crearResultado.php">Nuevo resultado</a></li>
+                        </ul>
+                    </li>
+
+                    <hr>
+                    <h4 class="sidebar-subtitle">Datos</h4>
+                
+                    <!-- RANKING -->
+                    <li class="mt">
+                        <a href="ranking.php">
+                            <i class="fa fa-star"></i>
+                            <span>Ranking</span>
+                        </a>
+                    </li>
+
+                    <!--CALENDARIO DE PARTIDOS-->
+                    <li>
+                        <a class="active" href="calendarioPartidos.php">
+                            <i class="fa fa-calendar"></i>
+                            <span>Calendario de partidos</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+
+
+            </div>
+        </aside>
+        <!--sidebar end-->
+
 
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT

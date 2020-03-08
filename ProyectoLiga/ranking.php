@@ -56,7 +56,7 @@ if(!isset($_COOKIE['correctLogin'])){
         </header>
         <!--header end-->
 
-        <!-- **********************************************************************************************************************************************************
+          <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
         <!--sidebar start-->
@@ -68,8 +68,9 @@ if(!isset($_COOKIE['correctLogin'])){
                     <p class="centered">
                         <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
-                    <h5 class="centered">Nombre del usuario</h5>
+                    <h5 class="centered">Menu</h5>
 
+                    <!--DASHBOARD-->
                     <li class="mt">
                         <a href="index.php">
                             <i class="fa fa-dashboard"></i>
@@ -77,17 +78,31 @@ if(!isset($_COOKIE['correctLogin'])){
                         </a>
                     </li>
 
+                    <hr>
+
+                    <h4 class="sidebar-subtitle">Configuración</h4>
+
+                    <!--EDITAR LIGA-->
+                    <li class="mt">
+                        <a href="editarLiga.php">
+                            <i class="fa fa-pencil-square"></i>
+                            <span>Editar liga</span>
+                        </a>
+                    </li>
+
+                    <!--EQUIPOS-->
                     <li class="sub-menu">
-                        <a class="active" href="javascript:;">
+                        <a href="javascript:;">
                             <i class="fa fa-desktop"></i>
                             <span>Equipos</span>
                         </a>
                         <ul class="sub">
-                            <li class="active"><a href="equipos.php">Ver equipos</a></li>
+                            <li><a href="equipos.php">Ver equipos</a></li>
                             <li><a href="crearEquipo.php">Crear equipo</a></li>
                         </ul>
                     </li>
 
+                    <!--RESULTADOS-->
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-cogs"></i>
@@ -98,11 +113,34 @@ if(!isset($_COOKIE['correctLogin'])){
                             <li><a href="crearResultado.php">Nuevo resultado</a></li>
                         </ul>
                     </li>
+
+                    <hr>
+                    <h4 class="sidebar-subtitle">Datos</h4>
+                
+                    <!-- RANKING -->
+                    <li class="mt">
+                        <a class="active" href="ranking.php">
+                            <i class="fa fa-star"></i>
+                            <span>Ranking</span>
+                        </a>
+                    </li>
+
+                    <!--CALENDARIO DE PARTIDOS-->
+                    <li>
+                        <a href="calendarioPartidos.php">
+                            <i class="fa fa-calendar"></i>
+                            <span>Calendario de partidos</span>
+                        </a>
+                    </li>
+
                 </ul>
                 <!-- sidebar menu end-->
+
+
             </div>
         </aside>
         <!--sidebar end-->
+
 
         <!-- **********************************************************************************************************************************************************
       MAIN CONTENT

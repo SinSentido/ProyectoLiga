@@ -258,6 +258,11 @@ ul.top-menu>li>.logout {
     font-weight: 700;
 }
 
+.sidebar-subtitle{
+    text-align: center;
+    color: #f2f2f2;
+}
+
 #sidebar ul li {
     position: relative;
 }

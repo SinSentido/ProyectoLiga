@@ -98,6 +98,25 @@ if(!isset($_COOKIE['correctLogin'])){
                             <li><a href="crearResultado.php">Nuevo resultado</a></li>
                         </ul>
                     </li>
+
+                    <hr>
+                    <h4 class="sidebar-subtitle">Datos</h4>
+                
+                    <!-- RANKING -->
+                    <li class="mt">
+                        <a href="ranking.php">
+                            <i class="fa fa-star"></i>
+                            <span>Ranking</span>
+                        </a>
+                    </li>
+
+                    <!--CALENDARIO DE PARTIDOS-->
+                    <li>
+                        <a href="calendarioPartidos.php">
+                            <i class="fa fa-calendar"></i>
+                            <span>Calendario de partidos</span>
+                        </a>
+                    </li>
                 </ul>
                 <!-- sidebar menu end-->
             </div>

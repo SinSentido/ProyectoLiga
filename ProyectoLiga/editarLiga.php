@@ -112,6 +112,25 @@ if(!isset($_COOKIE['correctLogin'])){
                         </ul>
                     </li>
 
+                    <hr>
+                    <h4 class="sidebar-subtitle">Datos</h4>
+                
+                    <!-- RANKING -->
+                    <li class="mt">
+                        <a  href="ranking.php">
+                            <i class="fa fa-star"></i>
+                            <span>Ranking</span>
+                        </a>
+                    </li>
+
+                    <!--CALENDARIO DE PARTIDOS-->
+                    <li>
+                        <a href="calendarioPartidos.php">
+                            <i class="fa fa-calendar"></i>
+                            <span>Calendario de partidos</span>
+                        </a>
+                    </li>
+
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -129,7 +148,7 @@ if(!isset($_COOKIE['correctLogin'])){
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> Creacion De Liga</h4>
+                            <h4 class="mb"><i class="fa fa-angle-right"></i> Editar Liga</h4>
 
                             <form class="form-horizontal style-form" method="POST" action="buttonsLogic.php">
                                 <div class="form-group">
