@@ -212,28 +212,11 @@
     function getAllResultByMatch($database, $idMatch){
 
         $results = $database->query(
-            "SELECT * FROM <resultado>, <partido>, <equipo> WHERE <resultado.idPartido> = <partido.idPartido> AND <resultado.idEquipo> = <equipo.idEquipo> AND <resultado.idPartido> = :id ORDER BY <resultado.idPartido> DESC",[
+            "SELECT resultado.idPartido, equipo.nombreEquipo, fecha, resultado FROM <resultado>, <partido>, <equipo> WHERE <resultado.idPartido> = <partido.idPartido> AND <resultado.idEquipo> = <equipo.idEquipo> AND <resultado.idPartido> = :id GROUP BY resultado.idPartido , equipo.nombreEquipo ORDER BY <resultado.idPartido> DESC",
+            [
                 ":id" => $idMatch
             ]
         )->fetchAll();
-
-        // $results = $database->select("resultado",
-        // ["[><]equipo" => ["idEquipo" => "idEquipo"],
-        //  "[><]partido" => ["idPartido" => "idPartido"]], 
-        //  [
-        //     "resultado.idPartido",
-        //     "partido.fecha",
-        //     "resultado.idEquipo",
-        //     "equipo.nombreEquipo",
-        //     "resultado"
-        //  ],
-        //  [
-        //      "resultado.idPartido" => "$idMatch"
-        //  ],
-        //  [
-        //     'GROUP' => 'resultado.idPartido',
-        //     'ORDER' => ["resultado.idPartido" => "DESC"]
-        //  ]);
         return $results;
     }
 

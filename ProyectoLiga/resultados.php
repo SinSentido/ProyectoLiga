@@ -199,6 +199,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                     $aux = -1;
                                     foreach($results as $result) {
                                         if($aux != $result["idPartido"]){
+                                            // Devuelve los datos de los dos equipos echados en el partido seleccionado
                                             $resultsCompleted = getAllResultByMatch($database,$result["idPartido"]);
                                             echo "<tr>";
                                             echo "<td>" . $resultsCompleted[0]['idPartido'] . "</td>";
@@ -211,7 +212,7 @@ if(!isset($_COOKIE['correctLogin'])){
                                             echo "<form action=\"editarResultado.php\" method=\"POST\"><button type=\"submit\" name=\"btnResultEdit\" value=\"" . $resultsCompleted[0]['idPartido'] . "\" class=\"btn btn-primary btn-xs\"><i class=\"fa fa-pencil\"></i></button></form>";
                                             echo "</td>";
                                             echo "</tr>";
-                                            $aux = $result["idPartido"];
+                                        $aux = $result["idPartido"];
                                         }
                                     }
                                 ?>
