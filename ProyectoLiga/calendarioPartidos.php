@@ -57,7 +57,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.html" class="logo"><b>Gestor de ligas de baloncesto</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                
@@ -201,8 +201,8 @@
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
-              <a href="calendar.html#" class="go-top">
+          Proyecto HLC realizado por Jose Luis del Rio Muñoz Y Jose Antonio Simón
+              <a href="calendarioPartidos.php#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

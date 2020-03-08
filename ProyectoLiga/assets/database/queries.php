@@ -113,12 +113,19 @@
         $partidosJugados = $database->query("SELECT <nombreEquipo>, COUNT(<resultado.idPartido>) AS <partidos> FROM <equipo> 
             JOIN <resultado> ON <equipo.idEquipo> = <resultado.idEquipo> GROUP BY 1")->fetchAll();
 
-        print_r($partidosJugados);
+        return $partidosJugados;
+    }
+
+    function getAllTeamsWithVictories($database){
+        $teams = $database->query("SELECT <nombreEquipo>, COUNT(<r.idEquipo>) AS <victorias> FROM <equipo> AS <e> JOIN <resultado> AS <r> ON <r.idEquipo> = <e.idEquipo>
+        WHERE <r.resultado> >= (SELECT MAX(<resultado>) FROM <resultado> AS <r2> WHERE <r2.idPartido> = <r.idPartido>) GROUP BY 1 ORDER BY 2 DESC;")->fetchAll();
+
+        return $teams;
     }
 
     //Devuelve todos los equipo pertenecientes a una liga
-    function getAllTeamsByLeague($leagueId){
-        require './dbConnection.php';
+    function getAllTeamsByLeague($database, $leagueId){
+
         $teams = $database->select("equipo", "*", ['idLiga' => $leagueId]);
         return $teams;
         
@@ -224,7 +231,9 @@
     function getAllResultByMatch($database, $idMatch){
 
         $results = $database->query(
-            "SELECT resultado.idPartido, equipo.nombreEquipo, fecha, resultado FROM <resultado>, <partido>, <equipo> WHERE <resultado.idPartido> = <partido.idPartido> AND <resultado.idEquipo> = <equipo.idEquipo> AND <resultado.idPartido> = :id GROUP BY resultado.idPartido , equipo.nombreEquipo ORDER BY <resultado.idPartido> DESC",
+            "SELECT resultado.idPartido, equipo.nombreEquipo, fecha, resultado FROM <resultado>, <partido>, <equipo>
+             WHERE <resultado.idPartido> = <partido.idPartido> AND <resultado.idEquipo> = <equipo.idEquipo> AND <resultado.idPartido> = :id 
+             GROUP BY resultado.idPartido , equipo.nombreEquipo ORDER BY <resultado.idPartido> DESC",
             [
                 ":id" => $idMatch
             ]

@@ -46,7 +46,7 @@ if(!isset($_COOKIE['correctLogin'])){
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>Gestor de ligas de baloncesto</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -68,7 +68,7 @@ if(!isset($_COOKIE['correctLogin'])){
                     <p class="centered">
                         <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
-                    <h5 class="centered">Nombre del usuario</h5>
+                    <h5 class="centered">Menu</h5>
 
                     <li class="mt">
                         <a href="index.php">
@@ -234,7 +234,10 @@ if(!isset($_COOKIE['correctLogin'])){
         <!--footer start-->
         <footer class="site-footer">
             <div class="text-center">
-                2014 - Alvarez.is
+            Proyecto HLC realizado por Jose Luis del Rio Muñoz Y Jose Antonio Simón
+                <a href="resultados.php#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
             </div>
         </footer>
         <!--footer end-->

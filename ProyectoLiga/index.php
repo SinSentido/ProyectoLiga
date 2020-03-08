@@ -292,7 +292,7 @@ if(!isset($_COOKIE['correctLogin'])){
         <!--footer start-->
         <footer class="site-footer">
             <div class="text-center">
-                2014 - Alvarez.is
+            Proyecto HLC realizado por Jose Luis del Rio Muñoz Y Jose Antonio Simón
                 <a href="index.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>

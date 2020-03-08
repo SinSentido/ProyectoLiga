@@ -70,7 +70,7 @@ if(!isset($_COOKIE['correctLogin'])){
                     <p class="centered">
                         <a href="index.php"><img src="assets/img/pelotaLogin.png" class="img-circle" width="60"></a>
                     </p>
-                    <h5 class="centered">Nombre del usuario</h5>
+                    <h5 class="centered">Menu</h5>
 
                     <li class="mt">
                         <a href="index.php">
@@ -193,7 +193,7 @@ if(!isset($_COOKIE['correctLogin'])){
         <!--footer start-->
         <footer class="site-footer">
             <div class="text-center">
-                2014 - Alvarez.is
+            Proyecto HLC realizado por Jose Luis del Rio Muñoz Y Jose Antonio Simón
                 <a href="editarResultado.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>

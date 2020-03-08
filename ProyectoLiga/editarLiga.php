@@ -181,8 +181,8 @@ if(!isset($_COOKIE['correctLogin'])){
         <!--footer start-->
         <footer class="site-footer">
             <div class="text-center">
-                Proyecto HLC realizado por Jose Luis del Rio Muños Y Jose Antonio Simón
-                <a href="crearLiga.php#" class="go-top">
+                Proyecto HLC realizado por Jose Luis del Rio Muñoz Y Jose Antonio Simón
+                <a href="editarLiga.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>

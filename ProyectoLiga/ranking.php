@@ -46,11 +46,11 @@ if(!isset($_COOKIE['correctLogin'])){
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.php" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.php" class="logo"><b>Gestor de ligas de baloncesto</b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.php">Logout</a></li>
+                    <li><a class="logout" href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -148,7 +148,7 @@ if(!isset($_COOKIE['correctLogin'])){
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <h3><i class="fa fa-angle-right"></i> EQUIPOS CREADOS </h3>
+                <h3><i class="fa fa-angle-right"></i> RANKING </h3>
 
                 <!-- row -->
                 <div class="row mt">
@@ -159,31 +159,29 @@ if(!isset($_COOKIE['correctLogin'])){
                                 <hr>
                                 <thead>
                                     <tr>
+                                        <th>Posición</th>
                                         <th>Nombre</th>
-                                        <th>Nº Social</th>
-                                        <th>Ciudad</th>
-                                        <th>Fecha</th>
-                                        <th></th>
+                                        <th>Victorias</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                 <!-- PHP FOR THE TABLE TEAMS -->
                                 <?php
+                                    require './dbConnection.php';
                                     require './assets/database/queries.php';
 
-                                    $teams = getAllTeams();
+                                    $teams = getAllTeamsWithVictories($database);
+                                    $position = 1;
 
                                     foreach($teams as $team){
                                         echo "<tr>";
+                                        echo "<td>" . $position . "</td>";
                                         echo "<td>" . $team['nombreEquipo'] . "</td>";
-                                        echo "<td>" . $team['nSocial'] . "</td>";
-                                        echo "<td>" . $team['ciudad'] . "</td>";
-                                        echo "<td>" . $team['fechaCreacion'] . "</td>";
-                                        echo "<td>";
-                                        echo    "<form action=\"buttonsLogic.php\" method=\"POST\"><button type=\"submit\" name=\"btnDelete\" value=\"" . $team['idEquipo'] . "\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o \"></i></button></form>";
-                                        echo "</td>";
+                                        echo "<td>" . $team['victorias'] . "</td>";
                                         echo "</tr>";
+
+                                        $position += 1;
                                     }
                                 ?>
                                 <!-- END OF PHP -->
@@ -207,7 +205,7 @@ if(!isset($_COOKIE['correctLogin'])){
         <footer class="site-footer">
             <div class="text-center">
                 2014 - Alvarez.is
-                <a href="equipos.php#" class="go-top">
+                <a href="ranking.php#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>
